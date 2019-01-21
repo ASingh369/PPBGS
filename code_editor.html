@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Code Mirror</title>
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="codemirror/theme/dracula.css" />
+    <link rel="stylesheet" href="css/code_editor.css" />
+  </head>
+  <body>
+    <textarea id="html"><p>I am a paragraph</p></textarea> <br />
+    <textarea id="js">
+// This is comment
+      //alert("alert box");
+      function myFunction(){
+        if (true){
+          for (let i = 0; i < 3; i++){
+            console.log(i);
+          }
+        }
+        return 123;
+      }
+    </textarea>
+    <br />
+    <button onclick="compile()">Run</button> <br />
+    <iframe id="result"></iframe>
+
+    <script src="codemirror/lib/codemirror.js"></script>
+    <script src="codemirror/mode/xml/xml.js"></script>
+    <script src="codemirror/mode/javascript/javascript.js"></script>
+    <script src="javascript/code_editor.js"></script>
+  </body>
+</html>

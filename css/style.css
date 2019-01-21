@@ -1,0 +1,164 @@
+/*Index.html*/
+.dark-background {
+  background-color: #24292e;
+}
+.alt-font {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+.text-small {
+  font-size: 12px;
+  line-height: 20px;
+  color: #6f6f6f;
+}
+.font-weight-700 {
+  font-weight: 700;
+}
+.text-extra-dark-gray {
+  color: #232323;
+}
+.width-100px {
+  width: 100px;
+}
+.display-table {
+  display: table !important;
+}
+.separator-line-horrizontal-medium-light2 {
+  height: 1px;
+}
+.bg-deep-pink {
+  background-color: #ff214f;
+}
+.margin-auto {
+  margin: 0 auto !important;
+}
+.double-height {
+  height: 45px;
+}
+.single-height {
+  height: 20px;
+}
+.gallery-wrapper {
+  overflow: hidden;
+}
+
+/* Images On hover effect */
+.content {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.content .content-overlay {
+  background: rgba(255, 33, 79, 0.9);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay {
+  opacity: 1;
+}
+
+.content-image {
+  width: 100%;
+}
+
+.content-details {
+  position: absolute;
+  text-align: left;
+  padding-left: 2rem;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details {
+  top: 65%;
+  opacity: 1;
+}
+
+.content-title {
+  color: #fff;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 1.5%;
+  text-transform: uppercase;
+}
+
+.content-text {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.fadeIn-bottom {
+  top: 80%;
+}
+
+/*Topic Page*/
+.topic-images {
+  display: block;
+  border-radius: 100%;
+  width: 100%;
+  max-width: 320px;
+  max-height: 320px;
+}
+
+.image-border {
+  box-shadow: 0 0 0 4px #ffffff, 0 0 0 5px #e6e6e6;
+  border-radius: 100%;
+  max-width: 320px;
+  max-height: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.border-dark-pink {
+  border-bottom: 1px solid #ff214f !important;
+}
+
+.btn-outline-dark-pink {
+  color: #ff214f;
+  border-color: #ff214f;
+}
+.btn-outline-dark-pink:hover,
+.btn-outline-dark-pink:active,
+.btn-outline-dark-pink:visited,
+.btn-outline-dark-pink:focus {
+  color: white;
+  background-color: #ff214f !important;
+}
+
+/*Sign up*/
+.col-container {
+  display: table;
+  width: 100%;
+}
+.col-item {
+  display: table-cell;
+}
+
+.image-container-signUp {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.signUp-image {
+}
