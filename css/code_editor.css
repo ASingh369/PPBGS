@@ -2,3 +2,7 @@ iframe {
   width: 100%;
   height: 25em;
 }
+
+.code-editor-panel {
+  margin: 1rem;
+}
