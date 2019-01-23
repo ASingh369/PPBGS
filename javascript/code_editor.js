@@ -9,16 +9,20 @@ var js = CodeMirror.fromTextArea(document.getElementById("js"), {
   lineNumbers: true
 });
 
-window.onload = function () {
-    var resultWindow = document.getElementById("result").contentWindow;
-    resultWindow.console.stdlog = console.log.bind(console);
-    resultWindow.console.logs = [];
-    resultWindow.console.log = function(){
-        resultWindow.console.logs.push(Array.from(arguments));
-        resultWindow.console.stdlog.apply(console, arguments);
-    };
+var resultWindow = document.getElementById("result").contentWindow;
 
-    compile();
+window.onload = function () {
+  resultWindow.console.stdlog = console.log.bind(console);
+  resultWindow.console.logs = [];
+  resultWindow.console.log = function(){
+    resultWindow.console.logs.push(Array.from(arguments));
+    resultWindow.console.stdlog.apply(console, arguments);
+  };
+  compile();
+};
+
+window.onerror = function(msg, url, lineNo, columnNo, error) {
+  alert('error');
 };
 
 function compile() {
@@ -30,4 +34,6 @@ function compile() {
   result.writeln(html_final + "<script>" + js_final + "</script>");
   result.close();
   console.log(resultWindow.console.logs);
+  // console.log(resultWindow.console);
+    resultWindow.console.logs = [];
 }
