@@ -10,12 +10,12 @@ var js = CodeMirror.fromTextArea(document.getElementById("js"), {
 });
 
 window.onload = function () {
-    var result = document.getElementById("result").contentWindow;
-    result.console.stdlog = console.log.bind(console);
-    result.console.logs = [];
-    result.console.log = function(){
-        result.console.logs.push(Array.from(arguments));
-        result.console.stdlog.apply(console, arguments);
+    var resultWindow = document.getElementById("result").contentWindow;
+    resultWindow.console.stdlog = console.log.bind(console);
+    resultWindow.console.logs = [];
+    resultWindow.console.log = function(){
+        resultWindow.console.logs.push(Array.from(arguments));
+        resultWindow.console.stdlog.apply(console, arguments);
     };
 
     compile();
