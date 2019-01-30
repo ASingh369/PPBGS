@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/all.css" />
+  </head>
+  <body>
+    <section class="dark-background text-light d-none d-sm-block">
+      <div class="container py-1">
+        <div class="d-flex">
+          <div>
+            <small>
+              <span class="pr-5">
+                <i class="fas text-light fa-envelope-open"></i>
+                support@gmail.com</span
+              >
+              <span class="pr-2 ">
+                <i class="fas text-light fa-phone"></i> (333)-444-5555</span
+              ></small
+            >
+          </div>
+          <div class="ml-auto"><small>Logout</small></div>
+        </div>
+      </div>
+    </section>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Topics</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Rankings</a
+              >
+              <div class="dropdown-menu">
+                <a href="leaderboard.html" class="dropdown-item"
+                  >Leaderboards</a
+                >
+                <a href="#" class="dropdown-item">Table</a>
+              </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+            <li class="nav-item">
+              <a class="nav-link d-block d-sm-none" href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--Topic name section-->
+    <section>
+      <div
+        class="background-topic"
+        style="background-image:url(https://images.pexels.com/photos/129208/pexels-photo-129208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)"
+      >
+        <div class="py-5">
+          <div class="container text-center">
+            <h1 class="display-5 text-light my-5 d-inline">Topic Name</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Main Content-->
+
+    <section class="mt-5">
+      <div class="container">
+        <div class="d-block">
+          <a href=""
+            ><span class="p-1 border"
+              ><i class="fas fa-arrows-alt text-secondary"></i></span
+          ></a>
+        </div>
+        <div class="mt-3">
+          <iframe src="sample.pdf" width="100%" height="750px"></iframe>
+        </div>
+        <div class="container-fluid py-4">
+          <div class="row">
+            <div class="col text-center">
+              <button
+                type="button"
+                class="btn btn-outline-dark mr-sm-4 mr-0"
+                data-toggle="modal"
+                data-target="#learningModalCenter"
+              >
+                Want to learn more?
+              </button>
+
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="learningModalCenter"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">
+                        Learning Methods
+                      </h5>
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Choose the method of learning
+                      <hr />
+                      <a
+                        href="learn_pdf.html"
+                        class="btn btn-outline-dark-pink btn-block text-outline-pink"
+                      >
+                        Lecture Notes
+                      </a>
+                      <a
+                        href="learn_vid.html"
+                        class="btn btn-outline-dark-pink btn-block text-outline-pink"
+                      >
+                        Video Tutorials
+                      </a>
+                      <a
+                        href=""
+                        class="btn btn-outline-dark-pink btn-block text-outline-pink"
+                      >
+                        Other sources
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col text-center">
+              <button class="btn btn-outline-dark">Test your knowledge</button>
+            </div>
+          </div>
+          <hr />
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script>
+      var $grid = $(".gallery-wrapper").masonry({
+        itemSelector: ".grid-item",
+        columnWidth: ".grid-sizer",
+        percentPosition: true,
+        transitionDuration: 0
+      });
+
+      $grid.imagesLoaded().progress(function() {
+        $grid.masonry();
+      });
+    </script>
+  </body>
+</html>

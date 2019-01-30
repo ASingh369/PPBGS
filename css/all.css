@@ -2,6 +2,11 @@
 .dark-background {
   background-color: #24292e;
 }
+
+.text-pink {
+  color: #ff214f;
+}
+
 .alt-font {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
@@ -146,6 +151,13 @@
   background-color: #ff214f !important;
 }
 
+.text-outline-pink {
+  color: #ff214f !important;
+}
+.text-outline-pink:hover {
+  color: white !important;
+}
+
 /*Sign up*/
 .col-container {
   display: table;
@@ -161,4 +173,38 @@
 }
 
 .signUp-image {
+}
+
+/*Learn Page*/
+
+.background-topic {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.video-owner {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.arrow_box {
+  position: relative;
+  background: #ff214f;
+}
+.arrow_box:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: #ff214f;
+  border-width: 15px;
+  margin-left: -15px;
 }
