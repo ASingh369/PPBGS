@@ -1,19 +1,10 @@
 /* Leaderboard page */
 
-body {
+.leaderboard-text {
   font-size: 14px;
   color: #72777a;
   letter-spacing: 0.2px;
   overflow-x: hidden;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
   font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial,
     sans-serif;

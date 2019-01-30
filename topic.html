@@ -17,7 +17,7 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.css" />
   </head>
   <body>
     <section class="dark-background text-light d-none d-sm-block">
@@ -133,9 +133,68 @@
                     lectus ultricies eu. In convallis amet leo non sapien
                     iaculis efficitur consequat lorem ipsum.
                   </p>
-                  <button class="btn btn-outline-dark-pink">
+                  <!-- Button trigger modal -->
+                  <button
+                    type="button"
+                    class="btn btn-outline-dark-pink"
+                    data-toggle="modal"
+                    data-target="#learningModalCenter"
+                  >
                     Start Learning
                   </button>
+
+                  <!-- Modal -->
+                  <div
+                    class="modal fade"
+                    id="learningModalCenter"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true"
+                  >
+                    <div
+                      class="modal-dialog modal-dialog-centered"
+                      role="document"
+                    >
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">
+                            Learning Methods
+                          </h5>
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          Choose the method of learning
+                          <hr />
+                          <button
+                            type="button"
+                            class="btn btn-outline-dark-pink btn-block"
+                          >
+                            Lecture Notes
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-outline-dark-pink btn-block"
+                          >
+                            Video Tutorials
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-outline-dark-pink btn-block"
+                          >
+                            Other sources
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
