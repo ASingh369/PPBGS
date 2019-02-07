@@ -301,3 +301,40 @@
 .bg-deep-dark {
   background-color: #24292e;
 }
+
+.profile-heading {
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.badges {
+  max-width: 70px;
+  max-height: 70px;
+  border-radius: 100%;
+  padding: 2px;
+}
+
+.subheader {
+  font-size: 18px;
+  font-family: "PremierSans-Bold", Arial, "Helvetica Neue", Helvetica,
+    sans-serif;
+  font-weight: 550;
+}
+
+.subheader-small {
+  font-size: 14px;
+}
+
+.border-top-pink {
+  border-top: 4px solid #ff214f;
+}
+
+.border-bottom-white {
+  border-bottom: 2px solid #fff;
+}
+
+.table-heading {
+  font-size: 10px;
+  font-weight: 50;
+  color: #666;
+}
