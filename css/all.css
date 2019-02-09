@@ -1,4 +1,3 @@
-/*Index.html*/
 .dark-background {
   background-color: #24292e;
 }
@@ -117,7 +116,7 @@
   top: 80%;
 }
 
-/*Topic Page*/
+/*Topic Page CSS*/
 .topic-images {
   display: block;
   border-radius: 100%;
@@ -158,7 +157,7 @@
   color: white !important;
 }
 
-/*Sign up*/
+/*Sign up Css*/
 .col-container {
   display: table;
   width: 100%;
@@ -172,10 +171,7 @@
   max-width: 100%;
 }
 
-.signUp-image {
-}
-
-/*Learn Page*/
+/*Used in Learning Pages*/
 
 .background-topic {
   height: 100%;
@@ -209,50 +205,7 @@
   margin-left: -15px;
 }
 
-/*footer*/
-
-.user-info {
-  position: fixed;
-  bottom: 0;
-  pointer-events: none;
-  width: 100%;
-  /*left: 50%;
-  transform: translateX(-50%);*/
-}
-
-.user-leveling {
-  width: 80%;
-}
-
-.user-info-bg {
-  background: rgba(255, 33, 79, 0.8);
-}
-
-.coins-bg {
-  border-radius: 100%;
-}
-
-.coins-bg-half-circle-left {
-  border-top-left-radius: 100%;
-  border-bottom-left-radius: 100%;
-}
-.coins-bg-half-circle-right {
-  border-top-right-radius: 100%;
-  border-bottom-right-radius: 100%;
-}
-
-/*practice page*/
-/*
-.bg-image {
-  height: 100vh;
-  width: 100%;
-  background-image: url("https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.dark-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
-}*/
+/* Used in Practice Page*/
 
 .bg-image {
   background-image: url("https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
@@ -290,13 +243,7 @@
   color: #fff;
 }
 
-.triangle-down {
-  width: 0;
-  height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-top: 50px solid #555;
-}
+/*Sidebar CSS*/
 
 .bg-deep-dark {
   background-color: #24292e;
