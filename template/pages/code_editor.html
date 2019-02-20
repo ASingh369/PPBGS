@@ -66,17 +66,35 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row" style="height: 50vh">
-            <div style="width: 100%">
-                <div class="split split-horizontal" id="html-editor-parent">
-                    <textarea class="code-editor" name="html-editor"
-                        id="html-editor"><h1 class="header">Hello World!</h1></textarea>
+        <div class="code--grid-container">
+            <header>
+                <h1>Hello</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </header>
+            <main>
+                <!-- top half shows a html editor on the left and js editor on the right -->
+                <div class="row h-50">
+                    <!-- editors span the whole width of the page -->
+                    <div class="w-100">
+                        <!-- html editor -->
+                        <div class="split split-horizontal" id="html-editor-parent">
+                            <textarea class="code-editor" name="html-editor"
+                                id="html-editor"><h1 class="header">Hello World!</h1></textarea>
+                        </div>
+                        <div class="gutter gutter-horizontal"></div>
+                        <!-- js editor -->
+                        <div class="split split-horizontal" id="js-editor-parent">
+                            <textarea class="code-editor" name="js-editor"
+                                id="js-editor">console.log("Hello World!");</textarea>
+                        </div>
+                    </div>
                 </div>
-                <div class="gutter gutter-horizontal"></div>
-                <div class="split split-horizontal" id="js-editor-parent">
-                    <textarea class="code-editor" name="js-editor" id="js-editor">console.log("Hello World!");</textarea>
+                <!-- bottom half shows html page -->
+                <div class="row h-50">
+                    <!-- render html page as an iframe -->
+                    <iframe frameborder="0" style="width: 100%"></iframe>
                 </div>
-            </div>
+            </main>
         </div>
     </div>
 </body>

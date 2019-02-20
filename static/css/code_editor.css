@@ -26,3 +26,21 @@
 .CodeMirror {
   height: 100%;
 }
+
+/* page layout */
+.code--grid-container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas:
+    "header"
+    "main";
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
