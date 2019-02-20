@@ -13,6 +13,7 @@
 
     <!-- project's css -->
     <!-- <link rel="stylesheet" href="css/all.css" /> -->
+    <link rel="stylesheet" href="css/code_editor.css" />
 
     <!-- use fontawesome icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
@@ -57,6 +58,15 @@
 </head>
 
 <body>
+    <div class="container-fluid" style="height: 50vh">
+        <div class="split split-horizontal" id="html-editor-parent">
+            <textarea class="code-editor" name="html-editor" id="html-editor"></textarea>
+        </div>
+        <div class="gutter gutter-horizontal"></div>
+        <div class="split split-horizontal" id="js-editor-parent">
+            <textarea class="code-editor" name="js-editor" id="js-editor"></textarea>
+        </div>
+    </div>
 </body>
 
 </html>
