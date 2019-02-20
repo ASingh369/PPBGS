@@ -3,8 +3,12 @@
   background-color: #ddd;
 }
 
-.gutter.gutter-horizontal {
+.gutter-horizontal {
   cursor: col-resize;
+}
+
+.gutter-vertical {
+  cursor: row-resize;
 }
 
 .split-horizontal, .gutter-horizontal {
