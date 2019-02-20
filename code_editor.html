@@ -42,29 +42,41 @@
     <link href="codemirror/lib/codemirror.css" rel="stylesheet" />
     <link href="codemirror/theme/neo.css" rel="stylesheet" />
     <script src="codemirror/lib/codemirror.js"></script>
+    <script src="codemirror/mode/css/css.js"></script>
     <script src="codemirror/mode/javascript/javascript.js"></script>
+    <script src="codemirror/mode/xml/xml.js"></script>
+    <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
 
     <!-- codemirror addons -->
     <link href="codemirror/addon/lint/lint.css" rel="stylesheet" />
     <script src="codemirror/addon/lint/lint.js"></script>
+    <script src="codemirror/addon/lint/html-lint.js"></script>
     <script src="codemirror/addon/lint/javascript-lint.js"></script>
 
     <!-- project's css -->
     <!-- <link rel="stylesheet" href="css/all.css" /> -->
     <link rel="stylesheet" href="css/code_editor.css" />
 
+    <!-- use htmlhint -->
+    <script src="javascript/htmlhint.js"></script>
+
     <!-- javascript entry point -->
     <script src="javascript/code_editor.js" type="module" defer></script>
 </head>
 
 <body>
-    <div class="container-fluid" style="height: 50vh">
-        <div class="split split-horizontal" id="html-editor-parent">
-            <textarea class="code-editor" name="html-editor" id="html-editor"></textarea>
-        </div>
-        <div class="gutter gutter-horizontal"></div>
-        <div class="split split-horizontal" id="js-editor-parent">
-            <textarea class="code-editor" name="js-editor" id="js-editor"></textarea>
+    <div class="container-fluid">
+        <div class="row" style="height: 50vh">
+            <div style="width: 100%">
+                <div class="split split-horizontal" id="html-editor-parent">
+                    <textarea class="code-editor" name="html-editor"
+                        id="html-editor"><h1 class="header">Hello World!</h1></textarea>
+                </div>
+                <div class="gutter gutter-horizontal"></div>
+                <div class="split split-horizontal" id="js-editor-parent">
+                    <textarea class="code-editor" name="js-editor" id="js-editor">console.log("Hello World!");</textarea>
+                </div>
+            </div>
         </div>
     </div>
 </body>
