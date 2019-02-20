@@ -1,8 +1,4 @@
 /* split view classes with split.js */
-.split {
-  float: left;
-}
-
 .gutter {
   background-color: #ddd;
 }
@@ -11,15 +7,9 @@
   cursor: col-resize;
 }
 
-.split.split-horizontal, .gutter.gutter-horizontal {
+.split-horizontal, .gutter-horizontal {
   height: 100%;
   float: left;
-}
-
-/* html/js textarea styling */
-.code-editor {
-  width: 100%;
-  height: 100%;
 }
 
 /* codemirror instance */
@@ -31,21 +21,16 @@
 .code--grid-container {
   height: 100vh;
   display: grid;
-  grid-template-rows: 100px 1fr 1fr;
+  grid-template-rows: 100px 1fr;
   grid-template-areas:
     "header"
-    "editors"
-    "frame";
+    "main";
 }
 
 header {
   grid-area: header;
 }
 
-#editors {
-  grid-area: editors;
-}
-
-#frame {
-  grid-area: frame;
+main {
+  grid-area: main;
 }

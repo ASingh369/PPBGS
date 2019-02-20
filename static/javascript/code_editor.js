@@ -3,6 +3,11 @@
 // make editors resizable
 Split(['#html-editor-parent', '#js-editor-parent']);
 
+// split editors and frame vertically
+Split(['#editors', '#frame'], {
+  direction: 'vertical',
+});
+
 // references to page elements
 const DOMElements = {
   iframe: $('iframe')[0],
