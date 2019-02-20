@@ -71,30 +71,28 @@
                 <h1>Hello</h1>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             </header>
-            <main>
-                <!-- top half shows a html editor on the left and js editor on the right -->
-                <div class="row h-50">
-                    <!-- editors span the whole width of the page -->
-                    <div class="w-100">
-                        <!-- html editor -->
-                        <div class="split split-horizontal" id="html-editor-parent">
-                            <textarea class="code-editor" name="html-editor"
-                                id="html-editor"><h1 class="header">Hello World!</h1></textarea>
-                        </div>
-                        <div class="gutter gutter-horizontal"></div>
-                        <!-- js editor -->
-                        <div class="split split-horizontal" id="js-editor-parent">
-                            <textarea class="code-editor" name="js-editor"
-                                id="js-editor">console.log("Hello World!");</textarea>
-                        </div>
+            <!-- top half of the page shows a html editor on the left and js editor on the right -->
+            <div id="editors">
+                <!-- editors span the whole width of the page -->
+                <div class="w-100 h-100">
+                    <!-- html editor -->
+                    <div class="split split-horizontal" id="html-editor-parent">
+                        <textarea class="code-editor" name="html-editor"
+                            id="html-editor"><h1 class="header">Hello World!</h1></textarea>
+                    </div>
+                    <div class="gutter gutter-horizontal"></div>
+                    <!-- js editor -->
+                    <div class="split split-horizontal" id="js-editor-parent">
+                        <textarea class="code-editor" name="js-editor"
+                            id="js-editor">console.log("Hello World!");</textarea>
                     </div>
                 </div>
-                <!-- bottom half shows html page -->
-                <div class="row h-50">
-                    <!-- render html page as an iframe -->
-                    <iframe frameborder="0" style="width: 100%"></iframe>
-                </div>
-            </main>
+            </div>
+            <!-- bottom half shows html page -->
+            <div id="frame">
+                <!-- render html page as an iframe -->
+                <iframe class="w-100" frameborder="0"></iframe>
+            </div>
         </div>
     </div>
 </body>
