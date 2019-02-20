@@ -1,3 +1,8 @@
+.logo {
+  height: 60px;
+  width: 110px;
+}
+
 .dark-background {
   background-color: #24292e;
 }
@@ -205,46 +210,6 @@
   margin-left: -15px;
 }
 
-/* Used in Practice Page*/
-
-.bg-image {
-  background-image: url("https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 95vh;
-}
-
-.dark-overlay {
-  background-color: rgba(0, 0, 0, 0.8);
-  height: 100%;
-  width: 100%;
-}
-
-.quiz-box {
-  max-width: 83%;
-  max-height: 90vh;
-}
-
-.quiz-option-outer {
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.quiz-option-outer:hover {
-  background-color: #ff214f;
-  color: #fff;
-}
-
-.quiz-option-outer:active,
-.quiz-option-outer:visited,
-.quiz-option-outer:focus {
-  background-color: #ff214f;
-  color: #fff;
-}
-
-/*Sidebar CSS*/
-
 .bg-deep-dark {
   background-color: #24292e;
 }
@@ -284,4 +249,53 @@
   font-size: 10px;
   font-weight: 50;
   color: #666;
+}
+
+/*Practice Page*/
+.bg-image-quiz {
+  background-image: url("https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  min-height: 92vh;
+}
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  min-height: 92vh;
+}
+
+.over-radio {
+  opacity: 0;
+}
+
+.quiz-option-outer {
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.quiz-option-outer:focus {
+  outline: none;
+}
+
+.quiz-option-outer:hover {
+  background-color: #ff214f !important;
+  color: #fff !important;
+}
+
+.option {
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .quiz-box {
+    max-width: 67%;
+  }
+}
+
+.bg-light2 {
+  background-color: #fff;
 }
