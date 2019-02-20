@@ -1,8 +1,23 @@
-iframe {
-  width: 100%;
-  height: 25em;
+/* split view classes with split.js */
+.split {
+  float: left;
 }
 
-.code-editor-panel {
-  margin: 1rem;
+.gutter {
+  background-color: #ddd;
+}
+
+.gutter.gutter-horizontal {
+  cursor: col-resize;
+}
+
+.split.split-horizontal, .gutter.gutter-horizontal {
+  height: 100%;
+  float: left;
+}
+
+/* html/js editor styling */
+.code-editor {
+  width: 100%;
+  height: 100%;
 }
