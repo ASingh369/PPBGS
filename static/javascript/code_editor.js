@@ -1,7 +1,14 @@
 /* global $, CodeMirror, Split */
 
+// make editors resizable
 Split(['#html-editor-parent', '#js-editor-parent']);
 
+// references to page elements
+const DOMElements = {
+  iframe: $('iframe')[0],
+};
+
+// create codemirror instances.
 const editors = {
   html: CodeMirror.fromTextArea($('#html-editor')[0], {
     lineNumbers: true,
@@ -20,3 +27,16 @@ const editors = {
     },
   }),
 };
+
+// update the html render. bottom half of the page
+const updateFrame = cm => {
+  const iframeDocument = DOMElements.iframe.contentWindow.document;
+  const htmlCode = cm.getValue();
+
+  iframeDocument.open();
+  iframeDocument.write(htmlCode);
+  iframeDocument.close();
+};
+
+editors.html.on('change', updateFrame);
+updateFrame(editors.html);
