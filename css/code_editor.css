@@ -31,16 +31,21 @@
 .code--grid-container {
   height: 100vh;
   display: grid;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 100px 1fr 1fr;
   grid-template-areas:
     "header"
-    "main";
+    "editors"
+    "frame";
 }
 
 header {
   grid-area: header;
 }
 
-main {
-  grid-area: main;
+#editors {
+  grid-area: editors;
+}
+
+#frame {
+  grid-area: frame;
 }
