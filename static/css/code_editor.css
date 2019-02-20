@@ -1,8 +1,40 @@
-iframe {
-  width: 100%;
-  height: 25em;
+/* split view classes with split.js */
+.gutter {
+  background-color: #ddd;
 }
 
-.code-editor-panel {
-  margin: 1rem;
+.gutter-horizontal {
+  cursor: col-resize;
+}
+
+.gutter-vertical {
+  cursor: row-resize;
+}
+
+.split-horizontal, .gutter-horizontal {
+  height: 100%;
+  float: left;
+}
+
+/* codemirror instance */
+.CodeMirror {
+  height: 100%;
+}
+
+/* page layout */
+.code--grid-container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas:
+    "header"
+    "main";
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
 }

@@ -1,39 +1,47 @@
-var html = CodeMirror.fromTextArea(document.getElementById("html"), {
-  mode: "xml",
-  theme: "dracula",
-  lineNumbers: true
-});
-var js = CodeMirror.fromTextArea(document.getElementById("js"), {
-  mode: "javascript",
-  theme: "dracula",
-  lineNumbers: true
+/* global $, CodeMirror, Split */
+
+// make editors resizable
+Split(['#html-editor-parent', '#js-editor-parent']);
+
+// split editors and frame vertically
+Split(['#editors', '#frame'], {
+  direction: 'vertical',
 });
 
-var resultWindow = document.getElementById("result").contentWindow;
-
-window.onload = function () {
-  resultWindow.console.stdlog = console.log.bind(console);
-  resultWindow.console.logs = [];
-  resultWindow.console.log = function(){
-    resultWindow.console.logs.push(Array.from(arguments));
-    resultWindow.console.stdlog.apply(console, arguments);
-  };
-  compile();
+// references to page elements
+const DOMElements = {
+  iframe: $('iframe')[0],
 };
 
-window.onerror = function(msg, url, lineNo, columnNo, error) {
-  alert('error');
+// create codemirror instances.
+const editors = {
+  html: CodeMirror.fromTextArea($('#html-editor')[0], {
+    lineNumbers: true,
+    theme: 'neo',
+    mode: 'htmlmixed',
+    gutters: ['CodeMirror-lint-markers'],
+    lint: true,
+  }),
+  js: CodeMirror.fromTextArea($('#js-editor')[0], {
+    lineNumbers: true,
+    theme: 'neo',
+    mode: 'javascript',
+    gutters: ['CodeMirror-lint-markers'],
+    lint: {
+      esversion: 6,
+    },
+  }),
 };
 
-function compile() {
-  var html_final = html.getValue();
-  var js_final = js.getValue();
-  var result = document.getElementById("result").contentWindow.document;
-  var resultWindow = document.getElementById("result").contentWindow;
-  result.open();
-  result.writeln(html_final + "<script>" + js_final + "</script>");
-  result.close();
-  console.log(resultWindow.console.logs);
-  // console.log(resultWindow.console);
-    resultWindow.console.logs = [];
-}
+// update the html render. bottom half of the page
+const updateFrame = cm => {
+  const iframeDocument = DOMElements.iframe.contentWindow.document;
+  const htmlCode = cm.getValue();
+
+  iframeDocument.open();
+  iframeDocument.write(htmlCode);
+  iframeDocument.close();
+};
+
+editors.html.on('change', updateFrame);
+updateFrame(editors.html);
