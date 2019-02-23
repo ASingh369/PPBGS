@@ -22,17 +22,24 @@
 }
 
 /* page layout */
-.code--grid-container {
+.code--page-container {
   height: 100vh;
+}
+
+/*
+  grid layout where the label is above the main content
+  the main content takes up the remaining space
+*/
+.label-rest-grid-layout {
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-areas:
-    "header"
+    "label"
     "main";
 }
 
 header {
-  grid-area: header;
+  grid-area: label;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-areas:

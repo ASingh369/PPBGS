@@ -16,14 +16,16 @@ const DOMElements = {
 
 // create codemirror instances.
 const editors = {
-  html: CodeMirror.fromTextArea($('#html-editor')[0], {
+  html: CodeMirror($('#html-editor')[0], {
+    value: '<h1>Hello World!</h1>',
     lineNumbers: true,
     theme: 'neo',
     mode: 'htmlmixed',
     gutters: ['CodeMirror-lint-markers'],
     lint: true,
   }),
-  js: CodeMirror.fromTextArea($('#js-editor')[0], {
+  js: CodeMirror($('#js-editor')[0], {
+    value: 'console.log("Hello World!");',
     lineNumbers: true,
     theme: 'neo',
     mode: 'javascript',
