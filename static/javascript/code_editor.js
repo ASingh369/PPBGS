@@ -6,6 +6,7 @@ Split(['#html-editor-parent', '#js-editor-parent']);
 // split editors and frame vertically
 Split(['#editors', '#frame'], {
   direction: 'vertical',
+  sizes: [40, 60],
 });
 
 // references to page elements
