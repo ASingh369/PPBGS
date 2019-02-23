@@ -48,3 +48,4 @@ const updateFrame = () => {
 };
 
 $('#run-button').click(updateFrame);
+updateFrame();
