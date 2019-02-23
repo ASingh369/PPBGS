@@ -1,3 +1,7 @@
+:root {
+  --editor-label-height: 30px;
+}
+
 /* split view classes with split.js */
 .gutter {
   background-color: #ddd;
@@ -26,18 +30,10 @@
   height: 100vh;
 }
 
-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-areas:
-    "title buttons";
+.editor-label {
+  height: var(--editor-label-height);
 }
 
-/* header layout */
-.title-area {
-  grid-area: title;
-}
-
-.button-area {
-  grid-area: buttons;
+.codemirror-wrapper {
+  height: calc(100% - var(--editor-label-height) - 8px);
 }

@@ -75,16 +75,18 @@
     <main class="flex-grow-1">
       <!-- top half of the page shows a html editor on the left and js editor on the right -->
       <div id="editors">
-        <!-- editors span the whole width of the page -->
-        <div class="w-100 h-100">
+        <!-- define height for horizontal split to work -->
+        <div class="h-100">
           <!-- html editor -->
-          <div class="split-horizontal" id="html-editor-parent">
-            <div class="text-editor-area h-100" id="html-editor"></div>
+          <div class="split-horizontal editor-area" id="html-editor-parent">
+            <h4 class="editor-label">HTML</h4>
+            <div class="codemirror-wrapper" id="html-editor"></div>
           </div>
           <div class="gutter gutter-horizontal"></div>
           <!-- js editor -->
           <div class="split-horizontal" id="js-editor-parent">
-            <div class="text-editor-area h-100" id="js-editor"></div>
+            <h4 class="editor-label">JS</h4>
+            <div class="codemirror-wrapper" id="js-editor"></div>
           </div>
         </div>
       </div>
