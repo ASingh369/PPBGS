@@ -37,14 +37,14 @@ const editors = {
 };
 
 // update the html render. bottom half of the page
-const updateFrame = cm => {
+const updateFrame = () => {
   const iframeDocument = DOMElements.iframe.contentWindow.document;
-  const htmlCode = cm.getValue();
+  const htmlCode = editors.html.getValue();
+  const jsCode = editors.js.getValue();
 
   iframeDocument.open();
-  iframeDocument.write(htmlCode);
+  iframeDocument.write(`${htmlCode}<script>${jsCode}</script>`);
   iframeDocument.close();
 };
 
-editors.html.on('change', updateFrame);
-updateFrame(editors.html);
+$('#run-button').click(updateFrame);
