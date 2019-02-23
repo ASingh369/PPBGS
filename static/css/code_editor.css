@@ -26,28 +26,11 @@
   height: 100vh;
 }
 
-/*
-  grid layout where the label is above the main content
-  the main content takes up the remaining space
-*/
-.label-rest-grid-layout {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-    "label"
-    "main";
-}
-
 header {
-  grid-area: label;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-areas:
     "title buttons";
-}
-
-main {
-  grid-area: main;
 }
 
 /* header layout */
