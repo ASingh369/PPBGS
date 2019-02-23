@@ -32,6 +32,8 @@
 
 .editor-label {
   height: var(--editor-label-height);
+  padding: 4px;
+  padding-left: 16px;
 }
 
 .codemirror-wrapper {
