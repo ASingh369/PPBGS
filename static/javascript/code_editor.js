@@ -49,3 +49,10 @@ const updateFrame = () => {
 
 $('#run-button').click(updateFrame);
 updateFrame();
+
+$(document).keydown(e => {
+  // if ctrl + enter is pressed down
+  if ((e.ctrlKey || e.metaKey) && (e.keyCode === 10 || e.keyCode === 13)) {
+    updateFrame();
+  }
+});
