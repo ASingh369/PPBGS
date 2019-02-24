@@ -1,6 +1,8 @@
 /* global $, CodeMirror, Split */
 /* eslint-disable no-console */
 
+// when user submits code, test it
+// if any tests fail, set true
 let codeFailedTests = false;
 
 const fail = x => {
@@ -77,13 +79,23 @@ $(document).keydown(e => {
 const testCode = test => {
   codeFailedTests = false;
 
-  const code = writeToFrame((html, js) => `${html}<script>${js}</script>`);
+  const code = writeToFrame((html, js) => `
+${html}
+<script>
+  fail = window.parent.fail;
+  ${test.setup}
+  ${js}
+  ${test.run}
+  ${test.cleanup}
+</script>`);
+
+  console.log(code);
 
   test.has.forEach(piece => {
     const re = new RegExp(piece.regex);
 
     if (!re.test(code.js)) {
-      fail(`Missing: ${piece.readable}`);
+      fail(piece.message);
     }
   });
 
@@ -91,7 +103,7 @@ const testCode = test => {
     const re = new RegExp(piece.regex);
 
     if (re.test(code.js)) {
-      fail(`Cannot use: ${piece.readable}`);
+      fail(piece.message);
     }
   });
 
@@ -112,3 +124,5 @@ fetch(dataLoc)
     editors.js.setValue(data.js);
   })
   .then(runCode);
+
+window.fail = fail;
