@@ -42,7 +42,7 @@ const DOMElements = {
   };
 
   // update the html render. bottom half of the page
-  const updateFrame = () => {
+  const runCode = () => {
     const iframeDocument = DOMElements.iframe.contentWindow.document;
     const htmlCode = editors.html.getValue();
     const jsCode = editors.js.getValue();
@@ -52,13 +52,13 @@ const DOMElements = {
     iframeDocument.close();
   };
 
-  $('#run-button').click(updateFrame);
-  updateFrame();
+  $('#run-button').click(runCode);
+  runCode();
 
+  // run code when ctrl + enter is pressed down
   $(document).keydown(e => {
-    // if ctrl + enter is pressed down
     if ((e.ctrlKey || e.metaKey) && (e.keyCode === 10 || e.keyCode === 13)) {
-      updateFrame();
+      runCode();
     }
   });
 })();
