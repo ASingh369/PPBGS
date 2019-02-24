@@ -81,32 +81,34 @@
       </nav>
     </header>
     <main class="flex-grow-1">
-      <!-- top half of the page shows HTML, JS editor as well as the console -->
+      <!-- top half of the page shows HTML and JS editor -->
       <div id="editors">
-        <!-- define height for horizontal split to work -->
-        <div class="h-100">
-          <!-- html editor -->
-          <div class="split-horizontal" id="html-editor-parent">
-            <h4 class="editor-label">HTML</h4>
-            <div class="codemirror-wrapper" id="html-editor"></div>
-          </div>
-          <div class="gutter gutter-horizontal"></div>
-          <!-- js editor -->
-          <div class="split-horizontal" id="js-editor-parent">
-            <h4 class="editor-label">JS</h4>
-            <div class="codemirror-wrapper" id="js-editor"></div>
-          </div>
+        <!-- html editor -->
+        <div class="split-horizontal" id="html-editor-parent">
+          <h4 class="pane-label">HTML</h4>
+          <div class="pane-content" id="html-editor"></div>
+        </div>
+        <div class="gutter gutter-horizontal"></div>
+        <!-- js editor -->
+        <div class="split-horizontal" id="js-editor-parent">
+          <h4 class="pane-label">JS</h4>
+          <div class="pane-content" id="js-editor"></div>
         </div>
       </div>
       <div class="gutter gutter-vertical"></div>
       <!-- bottom half shows html page and the console -->
       <div id="code-output">
-          <iframe class="split-horizontal" id="html-frame-view" frameborder="0"></iframe>
-          <div class="gutter gutter-horizontal"></div>
-          <div class="split-horizontal" id="console-area">
-            <h4 class="editor-label">Console</h4>
-            <div id="console-output"></div>
-          </div>
+        <!-- html page view -->
+        <div class="split-horizontal" id="html-frame-view">
+          <h4 class="pane-label">HTML Page</h4>
+          <iframe class="pane-content w-100" frameborder="0"></iframe>
+        </div>
+        <div class="gutter gutter-horizontal"></div>
+        <!-- console output -->
+        <div class="split-horizontal" id="console-area">
+          <h4 class="pane-label">Console</h4>
+          <div class="pane-content" id="console-output"></div>
+        </div>
       </div>
     </main>
   </div>

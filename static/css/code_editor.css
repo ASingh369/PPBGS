@@ -30,12 +30,12 @@
   height: 100vh;
 }
 
-.editor-label {
+.pane-label {
   height: var(--editor-label-height);
   padding: 4px;
   padding-left: 16px;
 }
 
-.codemirror-wrapper {
+.pane-content {
   height: calc(100% - var(--editor-label-height) - 8px);
 }
