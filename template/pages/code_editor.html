@@ -68,7 +68,10 @@
   <div class="code--page-container d-flex flex-column">
     <header>
       <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="/">Logo</a>
+        <div>
+          <a class="navbar-brand" href="/">Logo</a>
+          <div><strong>Task:</strong> <span id="task-placeholder"></span></div>
+        </div>
         <div>
           <button class="btn btn-outline-secondary" id="run-button">Run</button>
           <button class="btn btn-outline-primary" id="submit-button">Submit</button>
@@ -97,7 +100,7 @@
       <!-- bottom half shows html page -->
       <div id="frame">
         <!-- render html page as an iframe -->
-        <iframe class="w-100" frameborder="0"></iframe>
+        <iframe class="w-100 h-100" frameborder="0"></iframe>
       </div>
     </main>
   </div>

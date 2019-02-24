@@ -1,4 +1,5 @@
 {
-  "html": "<h1>Hello World!</h1>",
+  "task": "Display \"Hello World!\" to the console",
+  "html": "<h1>Hello World!</h1>\n<p>Look at the JS code editor on the right. Between the brackets, type <code>\"Hello World!\"</code></p>\n<p>Then click the Run button at the top of the screen</p>\n<p>You can also use <code>Ctrl+Enter</code></p>",
   "js": "console.log();"
 }
