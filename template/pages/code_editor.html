@@ -31,7 +31,8 @@
     crossorigin="anonymous"></script>
 
   <!-- use split.js -->
-  <script src="https://unpkg.com/split-grid/dist/split-grid.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.5.10/split.min.js"
+    integrity="sha256-voAP1SafVzHBtUVXxB6ZuQB5mIZu6h0veHhhzwXcthQ=" crossorigin="anonymous"></script>
 
   <!-- use jshint -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.10.1/jshint.min.js"
@@ -71,28 +72,29 @@
         <button class="btn btn-outline-primary" id="run-button">Run</button>
       </nav>
     </header>
-    <main class="flex-grow-1 grid">
+    <main class="flex-grow-1">
       <!-- top half of the page shows a html editor on the left and js editor on the right -->
-      <div class="grid" id="editors">
-        <!-- html editor -->
-        <div id="html-editor-parent">
-          <h4 class="editor-label">HTML</h4>
-          <div class="codemirror-wrapper" id="html-editor"></div>
-        </div>
-        <!-- column split -->
-        <div class="gutter" id="split-column-1"></div>
-        <!-- js editor -->
-        <div id="js-editor-parent">
-          <h4 class="editor-label">JS</h4>
-          <div class="codemirror-wrapper" id="js-editor"></div>
+      <div id="editors">
+        <!-- define height for horizontal split to work -->
+        <div class="h-100">
+          <!-- html editor -->
+          <div class="split-horizontal editor-area" id="html-editor-parent">
+            <h4 class="editor-label">HTML</h4>
+            <div class="codemirror-wrapper" id="html-editor"></div>
+          </div>
+          <div class="gutter gutter-horizontal"></div>
+          <!-- js editor -->
+          <div class="split-horizontal" id="js-editor-parent">
+            <h4 class="editor-label">JS</h4>
+            <div class="codemirror-wrapper" id="js-editor"></div>
+          </div>
         </div>
       </div>
-      <!-- row split -->
-      <div class="gutter" id="split-row-1"></div>
+      <div class="gutter gutter-vertical"></div>
       <!-- bottom half shows html page -->
       <div id="frame">
         <!-- render html page as an iframe -->
-        <iframe class="w-100 h-100" frameborder="0"></iframe>
+        <iframe class="w-100" frameborder="0"></iframe>
       </div>
     </main>
   </div>

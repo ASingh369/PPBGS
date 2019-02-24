@@ -2,32 +2,30 @@
   --editor-label-height: 30px;
 }
 
-/* split grid */
-
-.grid {
-  display: grid;
-}
-
+/* split view classes with split.js */
 .gutter {
   background-color: #ddd;
 }
 
-main {
-  grid-template-rows: 1fr 10px 1fr;
+.gutter-horizontal {
+  cursor: col-resize;
 }
 
-#editors {
-  grid-template-columns: 1fr 10px 1fr;
+.gutter-vertical {
+  cursor: row-resize;
+}
+
+.split-horizontal, .gutter-horizontal {
+  height: 100%;
+  float: left;
 }
 
 /* codemirror instance */
-
 .CodeMirror {
   height: 100%;
 }
 
 /* page layout */
-
 .code--page-container {
   height: 100vh;
 }

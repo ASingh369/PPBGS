@@ -1,19 +1,12 @@
 /* global $, CodeMirror, Split */
 
-// make editors and iframe views resizable
-Split({
-  columnGutters: [
-    {
-      track: 1,
-      element: $('#split-column-1')[0],
-    },
-  ],
-  rowGutters: [
-    {
-      track: 1,
-      element: $('#split-row-1')[0],
-    },
-  ],
+// make editors resizable
+Split(['#html-editor-parent', '#js-editor-parent']);
+
+// split editors and frame vertically
+Split(['#editors', '#frame'], {
+  direction: 'vertical',
+  sizes: [40, 60],
 });
 
 // references to page elements
