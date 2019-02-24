@@ -1,4 +1,4 @@
-/* global $, CodeMirror, Split */
+/* global $, CodeMirror, jsyaml, Split */
 /* eslint-disable no-console */
 
 // when user submits code, test it
@@ -65,41 +65,33 @@ const writeToFrame = fn => {
 };
 
 // Run the HTML and JS code
-const runCode = () =>
-  writeToFrame((html, js) => `${html}<script>{ ${js} }</script>`);
-
-$('#run-button').click(runCode);
-
-// run code when ctrl + enter is pressed down
-$(document).keydown(e => {
-  if ((e.ctrlKey || e.metaKey) && (e.keyCode === 10 || e.keyCode === 13)) {
-    runCode();
-  }
-});
+const runCode = secret =>
+  writeToFrame((html, js) => `${html}<script>{${secret}}{${js}}</script>`);
 
 // Test to see if user completed the exercise
-const testCode = test => {
+const testCode = (secret, test) => {
   codeFailedTests = false;
 
   const code = writeToFrame(
     (html, js) => `
-${html}
-<script>
-  {
-    const fail = window.parent.fail;
-    ${test.setup}
-    { ${js} }
-    ${test.run}
-    ${test.cleanup}
-  }
-</script>`,
+      ${html}
+      <script>
+        {${secret}}
+        {
+          const fail = window.parent.fail;
+          ${test.setup}
+          { ${js} }
+          ${test.run}
+          ${test.cleanup}
+        }
+      </script>`,
   );
 
   // test if code exceeds maxLines
   if (test.maxLines < code.js.split('\n').length) {
     fail(
       `You must complete this exercise with ${
-        test.maxLines
+      test.maxLines
       } lines of JavaScript or less.`,
     );
   }
@@ -127,17 +119,31 @@ ${html}
   }
 };
 
-// fetch data
-const dataLoc = '/static/mock_data/exercise0.json';
-
-fetch(dataLoc)
-  .then(x => x.json())
+fetch('/static/mock_data/exercise0.yml', {
+  headers: {
+    "Content-Type": "text/plain",
+  },
+})
+  .then(data => data.text())
+  .then(jsyaml.load)
   .then(data => {
-    $('#submit-button').click(() => testCode(data.test));
+    $('#run-button').click(() => runCode(data.secret));
+    $('#submit-button').click(() => testCode(data.secret, data.test));
+
+    // run code when ctrl + enter is pressed down
+    $(document).keydown(e => {
+      if ((e.ctrlKey || e.metaKey) && (e.keyCode === 10 || e.keyCode === 13)) {
+        runCode(data.secret);
+      }
+    });
+
+    // insert task to the page
     $('#task-placeholder').html(data.task);
+    // insert code to the editors
     editors.html.setValue(data.html);
     editors.js.setValue(data.js);
-  })
-  .then(runCode);
+
+    runCode(data.secret);
+  });
 
 window.fail = fail;

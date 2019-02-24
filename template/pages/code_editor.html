@@ -7,9 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Code Editor</title>
 
-  <!-- use ramda for utility functions -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.26.1/ramda.min.js"
-                integrity="sha256-43x9r7YRdZpZqTjDT5E0Vfrxn1ajIZLyYWtfAXsargA=" crossorigin="anonymous"></script> -->
+  <!-- parse yaml -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.12.1/js-yaml.min.js"
+    integrity="sha256-xYfEFU0LN08iGcGajx1rqWTnYWIdaCHYME9C46FGIwE=" crossorigin="anonymous"></script>
 
   <!-- use fontawesome icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
@@ -100,8 +100,7 @@
       <div id="code-output">
         <!-- html page view -->
         <div class="split-horizontal" id="html-frame-view">
-          <h4 class="pane-label">HTML Page</h4>
-          <iframe class="pane-content w-100" frameborder="0"></iframe>
+          <iframe class="w-100 h-100" frameborder="0"></iframe>
         </div>
         <div class="gutter gutter-horizontal"></div>
         <!-- console output -->
