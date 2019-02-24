@@ -1,5 +1,7 @@
 /* global $, CodeMirror, Split */
 
+const dataLoc = '/static/mock_data/exercise0.json';
+
 // make editors resizable
 Split(['#html-editor-parent', '#js-editor-parent']);
 
@@ -14,45 +16,49 @@ const DOMElements = {
   iframe: $('iframe')[0],
 };
 
-// create codemirror instances.
-const editors = {
-  html: CodeMirror($('#html-editor')[0], {
-    value: '<h1>Hello World!</h1>',
-    lineNumbers: true,
-    theme: 'neo',
-    mode: 'htmlmixed',
-    gutters: ['CodeMirror-lint-markers'],
-    lint: true,
-  }),
-  js: CodeMirror($('#js-editor')[0], {
-    value: 'console.log("Hello World!");',
-    lineNumbers: true,
-    theme: 'neo',
-    mode: 'javascript',
-    gutters: ['CodeMirror-lint-markers'],
-    lint: {
-      esversion: 6,
-    },
-  }),
-};
+(async () => {
+  const codeData = await fetch(dataLoc).then(x => x.json());
 
-// update the html render. bottom half of the page
-const updateFrame = () => {
-  const iframeDocument = DOMElements.iframe.contentWindow.document;
-  const htmlCode = editors.html.getValue();
-  const jsCode = editors.js.getValue();
+  // create codemirror instances.
+  const editors = {
+    html: CodeMirror($('#html-editor')[0], {
+      value: codeData.html,
+      lineNumbers: true,
+      theme: 'neo',
+      mode: 'htmlmixed',
+      gutters: ['CodeMirror-lint-markers'],
+      lint: true,
+    }),
+    js: CodeMirror($('#js-editor')[0], {
+      value: codeData.js,
+      lineNumbers: true,
+      theme: 'neo',
+      mode: 'javascript',
+      gutters: ['CodeMirror-lint-markers'],
+      lint: {
+        esversion: 6,
+      },
+    }),
+  };
 
-  iframeDocument.open();
-  iframeDocument.write(`${htmlCode}<script>${jsCode}</script>`);
-  iframeDocument.close();
-};
+  // update the html render. bottom half of the page
+  const runCode = () => {
+    const iframeDocument = DOMElements.iframe.contentWindow.document;
+    const htmlCode = editors.html.getValue();
+    const jsCode = editors.js.getValue();
 
-$('#run-button').click(updateFrame);
-updateFrame();
+    iframeDocument.open();
+    iframeDocument.write(`${htmlCode}<script>${jsCode}</script>`);
+    iframeDocument.close();
+  };
 
-$(document).keydown(e => {
-  // if ctrl + enter is pressed down
-  if ((e.ctrlKey || e.metaKey) && (e.keyCode === 10 || e.keyCode === 13)) {
-    updateFrame();
-  }
-});
+  $('#run-button').click(runCode);
+  runCode();
+
+  // run code when ctrl + enter is pressed down
+  $(document).keydown(e => {
+    if ((e.ctrlKey || e.metaKey) && (e.keyCode === 10 || e.keyCode === 13)) {
+      runCode();
+    }
+  });
+})();
