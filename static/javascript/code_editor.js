@@ -15,11 +15,12 @@ const DOMElements = {
   iframe: $('iframe')[0],
 };
 
-// make editors resizable
+// make editors and code output resizable
 Split(['#html-editor-parent', '#js-editor-parent']);
+Split(['#html-frame-view', '#console-area']);
 
-// split editors and frame vertically
-Split(['#editors', '#frame'], {
+// split editors and code ouput vertically
+Split(['#editors', '#code-output'], {
   direction: 'vertical',
   sizes: [40, 60],
 });
@@ -63,7 +64,7 @@ const writeToFrame = fn => {
   };
 };
 
-// update the html render. bottom half of the page
+// Run the HTML and JS code
 const runCode = () =>
   writeToFrame((html, js) => `${html}<script>{ ${js} }</script>`);
 
@@ -76,6 +77,7 @@ $(document).keydown(e => {
   }
 });
 
+// Test to see if user completed the exercise
 const testCode = test => {
   codeFailedTests = false;
 
@@ -93,6 +95,7 @@ ${html}
 </script>`,
   );
 
+  // test if code exceeds maxLines
   if (test.maxLines < code.js.split('\n').length) {
     fail(
       `You must complete this exercise with ${
@@ -101,6 +104,7 @@ ${html}
     );
   }
 
+  // test if code contains certain strings
   test.has.forEach(piece => {
     const re = new RegExp(piece.regex);
 
@@ -109,6 +113,7 @@ ${html}
     }
   });
 
+  // test if code does not contain certain strings
   test.hasNot.forEach(piece => {
     const re = new RegExp(piece.regex);
 

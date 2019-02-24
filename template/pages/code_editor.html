@@ -81,12 +81,12 @@
       </nav>
     </header>
     <main class="flex-grow-1">
-      <!-- top half of the page shows a html editor on the left and js editor on the right -->
+      <!-- top half of the page shows HTML, JS editor as well as the console -->
       <div id="editors">
         <!-- define height for horizontal split to work -->
         <div class="h-100">
           <!-- html editor -->
-          <div class="split-horizontal editor-area" id="html-editor-parent">
+          <div class="split-horizontal" id="html-editor-parent">
             <h4 class="editor-label">HTML</h4>
             <div class="codemirror-wrapper" id="html-editor"></div>
           </div>
@@ -99,10 +99,14 @@
         </div>
       </div>
       <div class="gutter gutter-vertical"></div>
-      <!-- bottom half shows html page -->
-      <div id="frame">
-        <!-- render html page as an iframe -->
-        <iframe class="w-100 h-100" frameborder="0"></iframe>
+      <!-- bottom half shows html page and the console -->
+      <div id="code-output">
+          <iframe class="split-horizontal" id="html-frame-view" frameborder="0"></iframe>
+          <div class="gutter gutter-horizontal"></div>
+          <div class="split-horizontal" id="console-area">
+            <h4 class="editor-label">Console</h4>
+            <div id="console-output"></div>
+          </div>
       </div>
     </main>
   </div>
