@@ -1,7 +1,5 @@
 /* global $, CodeMirror, Split */
 
-const dataLoc = '/static/mock_data/exercise0.json';
-
 // references to page elements
 const DOMElements = {
   iframe: $('iframe')[0],
@@ -48,7 +46,6 @@ const runCode = () => {
 };
 
 $('#run-button').click(runCode);
-runCode();
 
 // run code when ctrl + enter is pressed down
 $(document).keydown(e => {
@@ -57,12 +54,15 @@ $(document).keydown(e => {
   }
 });
 
-(async () => {
-  const codeData = await fetch(dataLoc).then(x => x.json());
 
-  $('#task-placeholder').html(codeData.task);
-  editors.html.setValue(codeData.html);
-  editors.js.setValue(codeData.js);
-})();
+// fetch data
+const dataLoc = '/static/mock_data/exercise0.json';
 
-window.editors = editors;
+fetch(dataLoc)
+  .then(x => x.json())
+  .then(json => {
+    $('#task-placeholder').html(json.task);
+    editors.html.setValue(json.html);
+    editors.js.setValue(json.js);
+  })
+  .then(runCode);
