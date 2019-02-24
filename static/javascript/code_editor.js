@@ -8,7 +8,7 @@ let codeFailedTests = false;
 const fail = x => {
   codeFailedTests = true;
   console.error(x);
-}
+};
 
 // references to page elements
 const DOMElements = {
@@ -79,7 +79,8 @@ $(document).keydown(e => {
 const testCode = test => {
   codeFailedTests = false;
 
-  const code = writeToFrame((html, js) => `
+  const code = writeToFrame(
+    (html, js) => `
 ${html}
 <script>
   fail = window.parent.fail;
@@ -87,9 +88,16 @@ ${html}
   ${js}
   ${test.run}
   ${test.cleanup}
-</script>`);
+</script>`,
+  );
 
-  console.log(code);
+  if (test.maxLines < code.js.split('\n').length) {
+    fail(
+      `You must complete this exercise with ${
+        test.maxLines
+      } lines of JavaScript or less.`,
+    );
+  }
 
   test.has.forEach(piece => {
     const re = new RegExp(piece.regex);

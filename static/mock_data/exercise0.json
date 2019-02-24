@@ -4,7 +4,7 @@
   "js": "console.log();",
   "test": {
     "setup": "oldLog = console.log; consoleOutput = ''; console.log = x => { consoleOutput += x + '\\n'; oldLog(x); };",
-    "run": "if (consoleOutput.trim() !== 'Hello World!') fail(`The console output should be \"Hello World!\". Got \"${consoleOutput}\"`);",
+    "run": "consoleOutput = consoleOutput.trim(); if (consoleOutput !== 'Hello World!') fail(`The console output should be \"Hello World!\". Got \"${consoleOutput}\"`);",
     "cleanup": "console.log = oldLog;",
     "has": [
       {
