@@ -60,9 +60,9 @@ const dataLoc = '/static/mock_data/exercise0.json';
 
 fetch(dataLoc)
   .then(x => x.json())
-  .then(json => {
-    $('#task-placeholder').html(json.task);
-    editors.html.setValue(json.html);
-    editors.js.setValue(json.js);
+  .then(data => {
+    $('#task-placeholder').html(data.task);
+    editors.html.setValue(data.html);
+    editors.js.setValue(data.js);
   })
   .then(runCode);
