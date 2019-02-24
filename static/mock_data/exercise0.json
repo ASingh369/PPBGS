@@ -3,7 +3,7 @@
   "html": "<h1>Hello World!</h1>\n<p>Look at the JS code editor on the right. Between the brackets, type <code>\"Hello World!\"</code></p>\n<p>Then click the Run button at the top of the screen</p>\n<p>You can also use <code>Ctrl+Enter</code> instead of clicking Run.</p>",
   "js": "console.log();",
   "test": {
-    "setup": "oldLog = console.log; consoleOutput = ''; console.log = x => { consoleOutput += x + '\\n'; oldLog(x); };",
+    "setup": "const oldLog = console.log; let consoleOutput = ''; console.log = x => { consoleOutput += x + '\\n'; oldLog(x); };",
     "run": "consoleOutput = consoleOutput.trim(); if (consoleOutput !== 'Hello World!') fail(`The console output should be \"Hello World!\". Got \"${consoleOutput}\"`);",
     "cleanup": "console.log = oldLog;",
     "has": [

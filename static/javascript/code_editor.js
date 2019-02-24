@@ -65,7 +65,7 @@ const writeToFrame = fn => {
 
 // update the html render. bottom half of the page
 const runCode = () =>
-  writeToFrame((html, js) => `${html}<script>${js}</script>`);
+  writeToFrame((html, js) => `${html}<script>{ ${js} }</script>`);
 
 $('#run-button').click(runCode);
 
@@ -83,11 +83,13 @@ const testCode = test => {
     (html, js) => `
 ${html}
 <script>
-  fail = window.parent.fail;
-  ${test.setup}
-  ${js}
-  ${test.run}
-  ${test.cleanup}
+  {
+    const fail = window.parent.fail;
+    ${test.setup}
+    { ${js} }
+    ${test.run}
+    ${test.cleanup}
+  }
 </script>`,
   );
 
