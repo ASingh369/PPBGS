@@ -1,3 +1,7 @@
+:root {
+  --editor-label-height: 30px;
+}
+
 /* split view classes with split.js */
 .gutter {
   background-color: #ddd;
@@ -22,19 +26,20 @@
 }
 
 /* page layout */
-.code--grid-container {
+.code--page-container {
   height: 100vh;
-  display: grid;
-  grid-template-rows: 100px 1fr;
-  grid-template-areas:
-    "header"
-    "main";
 }
 
-header {
-  grid-area: header;
+.pane-label {
+  height: var(--editor-label-height);
+  padding: 4px;
+  padding-left: 16px;
 }
 
-main {
-  grid-area: main;
+.pane-content {
+  height: calc(100% - var(--editor-label-height) - 8px);
+}
+
+#console-output {
+  overflow-y: auto;
 }
