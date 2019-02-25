@@ -39,3 +39,7 @@
 .pane-content {
   height: calc(100% - var(--editor-label-height) - 8px);
 }
+
+#console-output {
+  overflow-y: auto;
+}

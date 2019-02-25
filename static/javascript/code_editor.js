@@ -1,18 +1,25 @@
 /* global $, CodeMirror, jsyaml, Split */
 /* eslint-disable no-console */
 
+// references to page elements
+const DOMElements = {
+  iframe: $('iframe')[0],
+  console: $('#console-output')[0],
+};
+
+const log = x => {
+  $(DOMElements.console).append(`<samp>${x}</samp><br />`);
+  console.log(x);
+};
+
 // when user submits code, test it
 // if any tests fail, set true
 let codeFailedTests = false;
 
 const fail = x => {
   codeFailedTests = true;
+  $(DOMElements.console).append(`<code>${x}</code><br />`);
   console.error(x);
-};
-
-// references to page elements
-const DOMElements = {
-  iframe: $('iframe')[0],
 };
 
 // make editors and code output resizable
@@ -65,22 +72,46 @@ const writeToFrame = fn => {
 };
 
 // Run the HTML and JS code
-const runCode = secret =>
-  writeToFrame((html, js) => `${html}<script>{${secret}}{${js}}</script>`);
+const runCode = secret => {
+  $(DOMElements.console).empty();
+
+  writeToFrame(
+    (html, js) => `
+      ${html}
+      <script>
+        console.log = window.parent.log;
+        {${secret}}
+        try {
+          {
+            ${js}
+          }
+        } catch (e) {
+          window.parent.fail(e.message);
+        }
+      </script>`,
+  );
+};
 
 // Test to see if user completed the exercise
 const testCode = (secret, test) => {
   codeFailedTests = false;
 
+  $(DOMElements.console).empty();
+
   const code = writeToFrame(
     (html, js) => `
       ${html}
       <script>
+        console.log = window.parent.log;
         {${secret}}
         {
           const fail = window.parent.fail;
           ${test.setup}
-          { ${js} }
+          try {
+            {${js}}
+          } catch (e) {
+            window.parent.fail(e.message);
+          }
           ${test.run}
           ${test.cleanup}
         }
@@ -88,10 +119,10 @@ const testCode = (secret, test) => {
   );
 
   // test if code exceeds maxLines
-  if (test.maxLines < code.js.split('\n').length) {
+  if (test.maxLines < code.js.trim().split('\n').length) {
     fail(
       `You must complete this exercise with ${
-      test.maxLines
+        test.maxLines
       } lines of JavaScript or less.`,
     );
   }
@@ -115,13 +146,13 @@ const testCode = (secret, test) => {
   });
 
   if (!codeFailedTests) {
-    console.log('yay! all tests passed!');
+    log('<span style="color: var(--green)">Yay! All tests passed!</span>');
   }
 };
 
 fetch('/static/mock_data/exercise0.yml', {
   headers: {
-    "Content-Type": "text/plain",
+    'Content-Type': 'text/plain',
   },
 })
   .then(data => data.text())
@@ -147,3 +178,4 @@ fetch('/static/mock_data/exercise0.yml', {
   });
 
 window.fail = fail;
+window.log = log;
