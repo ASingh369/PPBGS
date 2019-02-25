@@ -18,8 +18,10 @@ test:
     };
   run: |
     consoleOutput = consoleOutput.trim();
-    if (consoleOutput !== 'Hello World!')
+    if (consoleOutput !== 'Hello World!') {
+      consoleOutput = consoleOutput.replace(/\n/g, '<br />');
       fail(`The console output should be "Hello World!". Got "${consoleOutput}"`);
+    }
   cleanup: console.log = oldLog;
   has:
   - regex: console.log\(['"]Hello World!['"]\)

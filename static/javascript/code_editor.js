@@ -150,7 +150,7 @@ const testCode = (secret, test) => {
   }
 };
 
-fetch('/static/mock_data/exercise0.yml', {
+fetch('/static/mock_data/exercise1.yml', {
   headers: {
     'Content-Type': 'text/plain',
   },
