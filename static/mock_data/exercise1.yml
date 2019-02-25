@@ -43,6 +43,6 @@ test:
   cleanup: console.log = oldLog;
   has:
   - regex: (for|while|do)
-    message: 'Your code is missing a loop (use "for", "while", or "do... while").'
+    message: Your code is missing a loop (use "for", "while", or "do... while").
   hasNot: []
   maxLines: 10
