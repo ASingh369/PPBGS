@@ -44,7 +44,7 @@
     <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3 py-0">
       <div class="container">
         <a class="navbar-brand py-1" href="#"
-          ><img src="images/logo3.png" class="logo" alt=""
+          ><img src="../../static/images/logo3.png" class="logo" alt=""
         /></a>
         <button
           class="navbar-toggler"
@@ -257,7 +257,7 @@
             </div>
             <div class="row mx-0">
               <div
-                class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-12 py-5 px-md-0 px-sm-4 border-dark-pink"
+                class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-12 py-5 px-md-0 px-sm-4"
               >
                 <div class="container">
                   <div class="row mx-0 align-items-center">
@@ -393,6 +393,28 @@
       </div>
     </div>
 
+    <section class="dark-background py-5 text-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <h2>Discussion page</h2>
+            <p class="mb-0">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet
+              laboriosam ali
+            </p>
+            <p></p>
+          </div>
+          <div class="col-md-3 d-flex align-items-center">
+            <p class="mb-0">
+              <a href="q&a.html" class="btn btn-light px-4 py-3"
+                >Discussion Page</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -412,11 +434,11 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script>
-      var $grid = $(".gallery-wrapper").masonry({
-        itemSelector: ".grid-item",
-        columnWidth: ".grid-sizer",
+      var $grid = $('.gallery-wrapper').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
         percentPosition: true,
-        transitionDuration: 0
+        transitionDuration: 0,
       });
 
       $grid.imagesLoaded().progress(function() {

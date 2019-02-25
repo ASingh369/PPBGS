@@ -12,7 +12,7 @@
 }
 
 .alt-font {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
 }
 .text-small {
@@ -68,9 +68,9 @@
   bottom: 0;
   right: 0;
   opacity: 0;
-  -webkit-transition: all 0.4s ease-in-out 0s;
-  -moz-transition: all 0.4s ease-in-out 0s;
-  transition: all 0.4s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
 }
 
 .content:hover .content-overlay {
@@ -92,9 +92,21 @@
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   transform: translate(-50%, 0%);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  -moz-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.topic-name {
+  position: absolute;
+  left: 10.5%;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .topic-name {
+  opacity: 0;
 }
 
 .content:hover .content-details {
@@ -199,7 +211,7 @@
   top: 100%;
   left: 50%;
   border: solid transparent;
-  content: " ";
+  content: ' ';
   height: 0;
   width: 0;
   position: absolute;
@@ -228,7 +240,7 @@
 
 .subheader {
   font-size: 18px;
-  font-family: "PremierSans-Bold", Arial, "Helvetica Neue", Helvetica,
+  font-family: 'PremierSans-Bold', Arial, 'Helvetica Neue', Helvetica,
     sans-serif;
   font-weight: 550;
 }
@@ -253,7 +265,7 @@
 
 /*Practice Page*/
 .bg-image-quiz {
-  background-image: url("https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+  background-image: url('https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -298,4 +310,17 @@
 
 .bg-light2 {
   background-color: #fff;
+}
+
+/*Q and A*/
+.no-underline:hover {
+  text-decoration: none;
+}
+
+.bg-qa {
+  background-color: #f2f3f5;
+}
+
+.border-unread {
+  border: 1px solid #b0b3b6 !important;
 }

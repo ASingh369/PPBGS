@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../static/css/all.css" />
+  </head>
+  <body>
+    <section class="dark-background text-light d-none d-sm-block">
+      <div class="container py-1">
+        <div class="d-flex">
+          <div>
+            <small>
+              <span class="pr-5">
+                <i class="fas text-light fa-envelope-open"></i>
+                support@gmail.com</span
+              >
+              <span class="pr-2 ">
+                <i class="fas text-light fa-phone"></i> (333)-444-5555</span
+              ></small
+            >
+          </div>
+          <div class="ml-auto"><small>Logout</small></div>
+        </div>
+      </div>
+    </section>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item active">
+              <a class="nav-link" href="../../index.html">Topics</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Rankings</a
+              >
+              <div class="dropdown-menu">
+                <a href="leaderboard.html" class="dropdown-item"
+                  >Leaderboards</a
+                >
+                <a href="#" class="dropdown-item">Table</a>
+              </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+            <li class="nav-item">
+              <a class="nav-link d-block d-sm-none" href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--Topic name and form section-->
+
+    <div class="dark-background py-5">
+      <div class="container text-light">
+        <h2>Intro to Html</h2>
+        <ol class="breadcrumb px-0 pb-0 dark-background">
+          <li class="breadcrumb-item">
+            <a class="" href="#">Home</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a class="" href="../../index.html">Topics</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="topic.html" class="">Intro to Html</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="q&a.html">Q&A</a>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="bg-qa">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-9 col-lg-10 py-4">
+            <div class="container pt-2">
+              <div class="border py-3 px-4 bg-light">
+                <p href="" class="question text-dark mb-1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Necessitatibus, rerum repu?
+                </p>
+
+                <div class="text-small">
+                  <i class="fas fa-clock ml-3"></i> 3 hours ago
+                  <i class="fas fa-user ml-3"></i> John Doe
+                </div>
+                <div class="border p-3 mt-2 bg-qa">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                  id soluta labore illo cum? Libero, facere. Non voluptate
+                  deleniti quis eaque dolor ratione cumque fuga voluptates
+                  beatae repudiandae, aliquid aliquam.
+                </div>
+                <div class="text-small mt-2">
+                  6 comments
+                </div>
+                <hr />
+                <div class="form-group mb-0">
+                  <textarea
+                    name="details"
+                    rows="3"
+                    class="form-control"
+                    placeholder="Add an Answer"
+                  ></textarea>
+                </div>
+                <div class="pt-2">
+                  <input
+                    type="submit"
+                    class="btn btn-danger bg-deep-pink py-1"
+                    value="Save"
+                  />
+                </div>
+                <hr />
+                <div class="text-info">No answer posted yet</div>
+                <div class="border p-3 my-2">
+                  <a
+                    href=""
+                    class="text-dark no-underline subheader subheader-small"
+                  >
+                    John Doe
+                  </a>
+                  <span class="text-small">
+                    <i class="fas fa-clock ml-3"></i> 3 hours ago
+                  </span>
+                  <p
+                    class="subheader subheader-small font-weight-light pt-3 px-2"
+                  >
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Hic suscipit natus atque autem, quae quas nesciunt aliquam
+                    adipisci cum sequi eius illum facilis pariatur temporibus
+                    fugit velit tempore explicabo? Dolor!
+                  </p>
+                </div>
+
+                <div class="border p-3 my-2">
+                  <a
+                    href=""
+                    class="text-dark no-underline subheader subheader-small"
+                  >
+                    John Doe
+                  </a>
+                  <span class="text-small">
+                    <i class="fas fa-clock ml-3"></i> 3 hours ago
+                  </span>
+                  <p
+                    class="subheader subheader-small font-weight-light pt-3 px-2"
+                  >
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Hic suscipit natus atque autem, quae quas nesciunt aliquam
+                    adipisci cum sequi eius illum facilis pariatur temporibus
+                    fugit velit tempore explicabo? Dolor!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-lg-2 pl-md-0 pr-md-1 px-2 mt-3 pt-3">
+            <div class="bg-light2 py-2">
+              <h2 class="subheader px-2">John Doe</h2>
+              <div
+                class="border-top-pink border-left border-right border-bottom"
+              >
+                <h2 class="subheader py-2 text-center bg-light">Level 3</h2>
+                <h3 class="subheader subheader-small pt-2 px-2">
+                  Points/Rankings
+                </h3>
+                <div class="px-2">
+                  <table
+                    class="subheader subheader-small font-weight-light border px-1 bg-light"
+                    width="100%"
+                  >
+                    <tr class="border-bottom-white">
+                      <td width="70%" class="py-1 pl-1">Overall Points:</td>
+                      <th width="30%" class="py-1 pl-1">120</th>
+                    </tr>
+                    <tr class="border-bottom-white">
+                      <td width="70%" class="py-1 pl-1">Overall Rank:</td>
+                      <th width="30%" class="py-1 pl-1">7</th>
+                    </tr>
+                    <tr>
+                      <td width="70%" class="py-1 pl-1">Total Students:</td>
+                      <th width="30%" class="py-1 pl-1">36</th>
+                    </tr>
+                  </table>
+                </div>
+                <h3 class="subheader subheader-small pt-4 px-2">
+                  Best Overall
+                </h3>
+                <table
+                  width="100%"
+                  class="subheader subheader-small font-weight-light"
+                >
+                  <tr class="table-heading subheader border-bottom">
+                    <td width="15%" class="py-1 text-center">Pos</td>
+                    <td width="60%" class="py-1">Name</td>
+                    <td width="25%" class="py-1 text-center">Points</td>
+                  </tr>
+                  <tr class="border-bottom">
+                    <td width="15%" class="py-1 text-center">1</td>
+                    <td width="60%" class="py-1">
+                      <a href="" class="text-dark">Will Smith</a>
+                    </td>
+                    <td width="25%" class="py-1 text-center">260</td>
+                  </tr>
+                  <tr class="border-bottom">
+                    <td width="15%" class="py-1 text-center">2</td>
+                    <td width="60%" class="py-1">
+                      <a href="" class="text-dark">Jake Gyllenhall</a>
+                    </td>
+                    <td width="25%" class="py-1 text-center">230</td>
+                  </tr>
+                  <tr class="border-bottom">
+                    <td width="15%" class="py-1 text-center">3</td>
+                    <td width="60%" class="py-1">
+                      <a href="" class="text-dark">John Terry</a>
+                    </td>
+                    <td width="25%" class="py-1 text-center">200</td>
+                  </tr>
+                  <tr class="border-bottom">
+                    <td width="15%" class="py-1 text-center">4</td>
+                    <td width="60%" class="py-1">
+                      <a href="" class="text-dark">Ryan Reynolds</a>
+                    </td>
+                    <td width="25%" class="py-1 text-center">190</td>
+                  </tr>
+                  <tr class="border-bottom">
+                    <td width="15%" class="py-1 text-center">5</td>
+                    <td width="60%" class="py-1">
+                      <a href="" class="text-dark">David Beckham</a>
+                    </td>
+                    <td width="25%" class="py-1 text-center">160</td>
+                  </tr>
+                </table>
+
+                <h3 class="subheader subheader-small py-4 px-2">
+                  Achievements
+                </h3>
+                <div class="container-fluid my-2 text-center">
+                  <img
+                    class="badges bg-success icon"
+                    rel="popover"
+                    src="https://api.sololearn.com/Uploads/Achievements/56.png"
+                    alt="Engaged in!"
+                  />
+                </div>
+                <div class="container-fluid my-2 text-center">
+                  <img
+                    class="badges bg-secondary icon"
+                    src="https://api.sololearn.com/Uploads/Achievements/14.png"
+                    alt="Engaged in!"
+                  />
+                </div>
+                <div class="container-fluid my-2 text-center">
+                  <img
+                    class="badges bg-info icon"
+                    src="https://api.sololearn.com/Uploads/Achievements/16.png"
+                    alt="Engaged in!"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script>
+      var $grid = $('.gallery-wrapper').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true,
+        transitionDuration: 0,
+      });
+
+      $grid.imagesLoaded().progress(function() {
+        $grid.masonry();
+      });
+    </script>
+  </body>
+</html>
