@@ -29,7 +29,7 @@ Split(['#html-editor-parent', '#js-editor-parent'], {
 
 Split(['#html-frame-view', '#console-area'], {
   direction: 'vertical',
-  sizes: [80, 20],
+  sizes: [70, 30],
 });
 
 // split editors and code ouput vertically
@@ -72,27 +72,6 @@ const writeToFrame = fn => {
     js: jsCode,
     cb: cbCode,
   };
-};
-
-// Run the HTML and JS code
-const runCode = secret => {
-  $(DOMElements.console).empty();
-
-  writeToFrame(
-    (html, js) => `
-      ${html}
-      <script>
-        console.log = window.parent.log;
-        {${secret}}
-        try {
-          {
-            ${js}
-          }
-        } catch (e) {
-          window.parent.fail(e.message);
-        }
-      </script>`,
-  );
 };
 
 // Test to see if user completed the exercise
@@ -161,23 +140,23 @@ fetch('../../static/mock_data/exercise2.yml', {
   .then(data => data.text())
   .then(jsyaml.load)
   .then(data => {
-    $('#run-button').click(() => runCode(data.secret));
     $('#submit-button').click(() => testCode(data.secret, data.test));
 
-    // run code when ctrl + enter is pressed down
+    // test code when ctrl + enter is pressed down
     $(document).keydown(e => {
       if ((e.ctrlKey || e.metaKey) && (e.keyCode === 10 || e.keyCode === 13)) {
-        runCode(data.secret);
+        testCode(data.secret, data.test);
       }
     });
 
     // insert task to the page
     $('#task-placeholder').html(data.task);
+
     // insert code to the editors
     editors.html.setValue(data.html);
     editors.js.setValue(data.js);
 
-    runCode(data.secret);
+    testCode(data.secret, data.test);
   });
 
 window.fail = fail;
