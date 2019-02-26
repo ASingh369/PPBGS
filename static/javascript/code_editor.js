@@ -23,14 +23,17 @@ const fail = x => {
 };
 
 // make editors and code output resizable
-Split(['#html-editor-parent', '#js-editor-parent']);
-Split(['#html-frame-view', '#console-area']);
+Split(['#html-editor-parent', '#js-editor-parent'], {
+  direction: 'vertical',
+});
+
+Split(['#html-frame-view', '#console-area'], {
+  direction: 'vertical',
+  sizes: [80, 20],
+});
 
 // split editors and code ouput vertically
-Split(['#editors', '#code-output'], {
-  direction: 'vertical',
-  sizes: [40, 60],
-});
+Split(['#editors', '#code-output']);
 
 // create codemirror instances.
 const editors = {
