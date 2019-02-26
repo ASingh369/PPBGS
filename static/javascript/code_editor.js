@@ -25,6 +25,7 @@ const fail = x => {
 // make editors and code output resizable
 Split(['#html-editor-parent', '#js-editor-parent'], {
   direction: 'vertical',
+  sizes: [50, 50],
 });
 
 Split(['#html-frame-view', '#console-area'], {

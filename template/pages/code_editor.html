@@ -65,21 +65,15 @@
 </head>
 
 <body>
-  <div class="code--page-container d-flex flex-column">
+  <div class="code--page-container">
     <header>
       <!-- navbar displaying task and buttons -->
       <nav class="navbar navbar-light bg-light">
-        <div>
-          <a class="navbar-brand" href="/">Logo</a>
-          <div><strong>Task:</strong> <span id="task-placeholder"></span></div>
-        </div>
-        <!-- run code buttons -->
-        <div>
-          <button class="btn btn-outline-primary" id="submit-button">Submit</button>
-        </div>
+        <a class="navbar-brand" href="/">Logo</a>
+        <div><strong>Task:</strong> <span id="task-placeholder"></span></div>
       </nav>
     </header>
-    <main class="flex-grow-1">
+    <main>
       <!-- left half of the page shows HTML and JS editor -->
       <div class="split-horizontal" id="editors">
         <!-- html editor -->
@@ -109,6 +103,11 @@
         </div>
       </div>
     </main>
+    <div id="tail-content">
+      <button class="btn btn-outline-primary" id="submit-button">
+        Submit
+      </button>
+    </div>
   </div>
 </body>
 
