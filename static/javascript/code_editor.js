@@ -7,7 +7,14 @@ const state = {
   // secret javascript code not shown to the user
   secret: '',
   // a testing 'suite' ran against user code
-  codeChecks: undefined,
+  codeChecks: {
+    setup: '', // run before user code
+    run: '', // run after user code
+    cleanup: '', // runs last
+    has: [], // checks if code contains a pattern
+    hasNot: [], // opposite of 'has'
+    maxLines: 200, // max number of lines user should code
+  },
   // when user submits code, test it
   // if any tests fail, set true
   codeFailedTests: false,
