@@ -70,7 +70,6 @@
       <!-- navbar displaying task and buttons -->
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="/">Logo</a>
-        <div><strong>Task:</strong> <span id="task-placeholder"></span></div>
       </nav>
     </header>
     <main>
@@ -103,7 +102,8 @@
         </div>
       </div>
     </main>
-    <div id="tail-content">
+    <div class="d-flex p-3" id="tail-content">
+      <div class="flex-grow-1"><strong>Task:</strong> <span id="task-placeholder"></span></div>
       <button class="btn btn-outline-primary" id="submit-button">
         Submit
       </button>

@@ -55,6 +55,7 @@ main {
 
 #tail-content {
   grid-area: tail;
+  background-color: var(--light);
 }
 
 /* pane layout */
