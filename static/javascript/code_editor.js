@@ -28,7 +28,9 @@ const splits = {
     sizes: [100, 0],
     minSize: 0,
   }),
-  cols: Split(['#editors', '#code-output']),
+  cols: Split(['#editors', '#code-output'], {
+    minSize: 200,
+  }),
 };
 
 // create codemirror instances.
@@ -157,7 +159,7 @@ $('#toggle-console-button').click(() => {
   toggleConsole();
 });
 
-fetch('../../static/mock_data/exercise2.yml', {
+fetch('../../static/mock_data/exercise0.yml', {
   headers: {
     'Content-Type': 'text/plain',
   },
@@ -190,5 +192,3 @@ fetch('../../static/mock_data/exercise2.yml', {
 
 window.fail = fail;
 window.log = log;
-window.splits = splits;
-window.state = state;
