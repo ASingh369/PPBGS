@@ -1,40 +1,40 @@
 /* global $, CodeMirror, jsyaml, Split */
 /* eslint-disable no-console */
 
+const state = {
+  // when user submits code, test it
+  // if any tests fail, set true
+  codeFailedTests: undefined,
+  // console pane is visible
+  consoleShowned: true,
+  // save split size between html view and console
+  consoleSplitSize: [70, 30],
+};
+
 // references to page elements
 const DOMElements = {
   iframe: $('iframe')[0],
   console: $('#console-output')[0],
 };
 
-const log = x => {
-  $(DOMElements.console).append(`<samp>${x}</samp><br />`);
-  console.log(x);
-};
-
-// when user submits code, test it
-// if any tests fail, set true
-let codeFailedTests = false;
-
-const fail = x => {
-  codeFailedTests = true;
-  $(DOMElements.console).append(`<code>${x}</code><br />`);
-  console.error(x);
-};
-
 // make editors and code output resizable
-Split(['#html-editor-parent', '#js-editor-parent'], {
-  direction: 'vertical',
-  sizes: [50, 50],
-});
+const splits = {
+  left: Split(['#html-editor-parent', '#js-editor-parent'], {
+    direction: 'vertical',
+    sizes: [50, 50],
+  }),
+  right: Split(['#html-frame-view', '#console-area'], {
+    direction: 'vertical',
+    sizes: state.consoleSplitSize,
+    minSize: 0,
+  }),
+  cols: Split(['#editors', '#code-output']),
+};
 
-Split(['#html-frame-view', '#console-area'], {
-  direction: 'vertical',
-  sizes: [70, 30],
+$('#toggle-console-button').click(() => {
+  $(this).toggleClass('active');
+  state.consoleShowned = !state.consoleShowned;
 });
-
-// split editors and code ouput vertically
-Split(['#editors', '#code-output']);
 
 // create codemirror instances.
 const editors = {
@@ -54,6 +54,17 @@ const editors = {
       esversion: 6,
     },
   }),
+};
+
+const log = x => {
+  $(DOMElements.console).append(`<samp>${x}</samp><br />`);
+  console.log(x);
+};
+
+const fail = x => {
+  state.codeFailedTests = true;
+  $(DOMElements.console).append(`<code>${x}</code><br />`);
+  console.error(x);
 };
 
 // write code to the iframe
@@ -77,7 +88,7 @@ const writeToFrame = fn => {
 
 // Test to see if user completed the exercise
 const testCode = (secret, test) => {
-  codeFailedTests = false;
+  state.codeFailedTests = false;
 
   $(DOMElements.console).empty();
 
@@ -128,7 +139,7 @@ const testCode = (secret, test) => {
     }
   });
 
-  if (!codeFailedTests) {
+  if (!state.codeFailedTests) {
     log('<span style="color: var(--green)">Yay! All tests passed!</span>');
   }
 };
@@ -162,3 +173,5 @@ fetch('../../static/mock_data/exercise2.yml', {
 
 window.fail = fail;
 window.log = log;
+window.splits = splits;
+window.state = state;
