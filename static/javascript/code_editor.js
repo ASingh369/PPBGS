@@ -6,9 +6,9 @@ const state = {
   // if any tests fail, set true
   codeFailedTests: undefined,
   // console pane is visible
-  consoleShowned: true,
+  consoleShowned: false,
   // save split size between html view and console
-  consoleSplitSize: [70, 30],
+  consoleSplitSize: [60, 40],
 };
 
 // references to page elements
@@ -25,16 +25,11 @@ const splits = {
   }),
   right: Split(['#html-frame-view', '#console-area'], {
     direction: 'vertical',
-    sizes: state.consoleSplitSize,
+    sizes: [100, 0],
     minSize: 0,
   }),
   cols: Split(['#editors', '#code-output']),
 };
-
-$('#toggle-console-button').click(() => {
-  $(this).toggleClass('active');
-  state.consoleShowned = !state.consoleShowned;
-});
 
 // create codemirror instances.
 const editors = {
@@ -84,6 +79,19 @@ const writeToFrame = fn => {
     js: jsCode,
     cb: cbCode,
   };
+};
+
+// toggle console visibility
+const toggleConsole = () => {
+  // if the console is visible, save the size and make hidden
+  if (state.consoleShowned) {
+    state.consoleSplitSize = splits.right.getSizes();
+    splits.right.setSizes([100, 0]);
+  } else {
+    splits.right.setSizes(state.consoleSplitSize);
+  }
+
+  state.consoleShowned = !state.consoleShowned;
 };
 
 // Test to see if user completed the exercise
@@ -144,6 +152,11 @@ const testCode = (secret, test) => {
   }
 };
 
+$('#toggle-console-button').click(() => {
+  $(this).toggleClass('active');
+  toggleConsole();
+});
+
 fetch('../../static/mock_data/exercise2.yml', {
   headers: {
     'Content-Type': 'text/plain',
@@ -152,7 +165,11 @@ fetch('../../static/mock_data/exercise2.yml', {
   .then(data => data.text())
   .then(jsyaml.load)
   .then(data => {
-    $('#submit-button').click(() => testCode(data.secret, data.test));
+    $('#submit-button').click(() => {
+      state.consoleShowned = true;
+      splits.right.setSizes(state.consoleSplitSize);
+      testCode(data.secret, data.test)
+    });
 
     // test code when ctrl + enter is pressed down
     $(document).keydown(e => {
