@@ -2,6 +2,7 @@
 /* eslint-disable no-console */
 
 const state = {
+  urlParams: new URLSearchParams(window.location.search),
   // when user submits code, test it
   // if any tests fail, set true
   codeFailedTests: undefined,
@@ -161,11 +162,14 @@ $('#toggle-console-button').click(() => {
   toggleConsole();
 });
 
-fetch('../../static/mock_data/exercise0.yml', {
-  headers: {
-    'Content-Type': 'text/plain',
+fetch(
+  `../../static/mock_data/code_exercises/ex${state.urlParams.get('task')}.yml`,
+  {
+    headers: {
+      'Content-Type': 'text/plain',
+    },
   },
-})
+)
   .then(data => data.text())
   .then(jsyaml.load)
   .then(data => {
