@@ -2,11 +2,16 @@
 /* eslint-disable no-console */
 
 const state = {
+  // used to get query string parameters
   urlParams: new URLSearchParams(window.location.search),
+  // secret javascript code not shown to the user
+  secret: '',
+  // a testing 'suite' ran against user code
+  codeChecks: undefined,
   // when user submits code, test it
   // if any tests fail, set true
-  codeFailedTests: undefined,
-  // console pane is visible
+  codeFailedTests: false,
+  // console pane visible state
   consoleShowned: false,
   // save split size between html view and console
   consoleSplitSize: [60, 40],
@@ -69,73 +74,38 @@ const fail = x => {
 };
 
 // write code to the iframe
-// precondition: fn :: (html code, js code) -> string
-const writeToFrame = fn => {
+const writeToFrame = code => {
   const iframeDocument = DOMElements.iframe.contentWindow.document;
-  const htmlCode = editors.html.getValue();
-  const jsCode = editors.js.getValue();
-  const cbCode = fn(htmlCode, jsCode);
 
   iframeDocument.open();
-  iframeDocument.write(cbCode);
+  iframeDocument.write(code);
   iframeDocument.close();
-
-  return {
-    html: htmlCode,
-    js: jsCode,
-    cb: cbCode,
-  };
 };
 
-// Test to see if user completed the exercise
-const testCode = (secret, test) => {
-  state.codeFailedTests = false;
-
-  $(DOMElements.console).empty();
-
-  const code = writeToFrame(
-    (html, js) => `
-      ${html}
-      <script>
-        console.log = window.parent.log;
-        {${secret}}
-        {
-          const fail = window.parent.fail;
-          ${test.setup}
-          try {
-            {${js}}
-          } catch (e) {
-            window.parent.fail(e.message);
-          }
-          ${test.run}
-          ${test.cleanup}
-        }
-      </script>`,
-  );
-
+const testCode = jsCode => {
   // test if code exceeds maxLines
-  if (test.maxLines < code.js.trim().split('\n').length) {
+  if (state.codeChecks.maxLines < jsCode.trim().split('\n').length) {
     fail(
       `You must complete this exercise with ${
-        test.maxLines
+        state.codeChecks.maxLines
       } lines of JavaScript or less.`,
     );
   }
 
   // test if code contains certain strings
-  test.has.forEach(piece => {
+  state.codeChecks.has.forEach(piece => {
     const re = new RegExp(piece.regex);
 
-    if (!re.test(code.js)) {
+    if (!re.test(jsCode)) {
       fail(piece.message);
     }
   });
 
   // test if code does not contain certain strings
-  test.hasNot.forEach(piece => {
+  state.codeChecks.hasNot.forEach(piece => {
     const re = new RegExp(piece.regex);
 
-    if (re.test(code.js)) {
+    if (re.test(jsCode)) {
       fail(piece.message);
     }
   });
@@ -143,6 +113,36 @@ const testCode = (secret, test) => {
   if (!state.codeFailedTests) {
     log('<span style="color: var(--green)">Yay! All tests passed!</span>');
   }
+};
+
+// run the user's code against some tests
+const runCode = () => {
+  state.codeFailedTests = false;
+
+  $(DOMElements.console).empty();
+
+  const htmlCode = editors.html.getValue();
+  const jsCode = editors.js.getValue();
+
+  writeToFrame(`
+    ${htmlCode}
+    <script>
+      console.log = window.parent.log;
+      {${state.secret}}
+      {
+        const fail = window.parent.fail;
+        ${state.codeChecks.setup}
+        try {
+          {${jsCode}}
+        } catch (e) {
+          window.parent.fail(e.message);
+        }
+        ${state.codeChecks.run}
+        ${state.codeChecks.cleanup}
+      }
+    </script>`);
+
+  testCode(jsCode);
 };
 
 // toggle console visibility
@@ -173,16 +173,19 @@ fetch(
   .then(data => data.text())
   .then(jsyaml.load)
   .then(data => {
+    state.secret = data.secret;
+    state.codeChecks = data.test;
+
     $('#submit-button').click(() => {
       state.consoleShowned = true;
       splits.right.setSizes(state.consoleSplitSize);
-      testCode(data.secret, data.test);
+      runCode();
     });
 
     // test code when ctrl + enter is pressed down
     $(document).keydown(e => {
       if ((e.ctrlKey || e.metaKey) && (e.keyCode === 10 || e.keyCode === 13)) {
-        testCode(data.secret, data.test);
+        runCode();
       }
     });
 
@@ -193,7 +196,7 @@ fetch(
     editors.html.setValue(data.html);
     editors.js.setValue(data.js);
 
-    testCode(data.secret, data.test);
+    runCode();
   });
 
 window.fail = fail;
