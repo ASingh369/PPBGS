@@ -140,7 +140,9 @@ const runCode = () => {
         const fail = window.parent.fail;
         ${state.codeChecks.setup}
         try {
-          {${jsCode}}
+          {
+            ${jsCode}
+          }
         } catch (e) {
           window.parent.fail(e.message);
         }
