@@ -27,6 +27,9 @@ const splits = {
     direction: 'vertical',
     sizes: [100, 0],
     minSize: 0,
+    onDrag() {
+      state.consoleSplitSize = splits.right.getSizes();
+    },
   }),
   cols: Split(['#editors', '#code-output'], {
     minSize: 200,
@@ -81,19 +84,6 @@ const writeToFrame = fn => {
     js: jsCode,
     cb: cbCode,
   };
-};
-
-// toggle console visibility
-const toggleConsole = () => {
-  // if the console is visible, save the size and make hidden
-  if (state.consoleShowned) {
-    state.consoleSplitSize = splits.right.getSizes();
-    splits.right.setSizes([100, 0]);
-  } else {
-    splits.right.setSizes(state.consoleSplitSize);
-  }
-
-  state.consoleShowned = !state.consoleShowned;
 };
 
 // Test to see if user completed the exercise
@@ -154,6 +144,18 @@ const testCode = (secret, test) => {
   }
 };
 
+// toggle console visibility
+const toggleConsole = () => {
+  // if the console is visible, save the size and make hidden
+  if (state.consoleShowned) {
+    splits.right.setSizes([100, 0]);
+  } else {
+    splits.right.setSizes(state.consoleSplitSize);
+  }
+
+  state.consoleShowned = !state.consoleShowned;
+};
+
 $('#toggle-console-button').click(() => {
   $(this).toggleClass('active');
   toggleConsole();
@@ -170,7 +172,7 @@ fetch('../../static/mock_data/exercise0.yml', {
     $('#submit-button').click(() => {
       state.consoleShowned = true;
       splits.right.setSizes(state.consoleSplitSize);
-      testCode(data.secret, data.test)
+      testCode(data.secret, data.test);
     });
 
     // test code when ctrl + enter is pressed down
