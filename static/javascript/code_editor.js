@@ -154,6 +154,10 @@ const runCode = () => {
   testCode(jsCode);
 };
 
+editors.js.on("change", () => {
+  runCode();
+});
+
 $('#toggle-console-button').click(() => {
   $(this).toggleClass('active');
 
