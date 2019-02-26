@@ -152,21 +152,19 @@ const runCode = () => {
   testCode(jsCode);
 };
 
-// toggle console visibility
-const toggleConsole = () => {
+$('#toggle-console-button').click(() => {
+  $(this).toggleClass('active');
+
   // if the console is visible, save the size and make hidden
   if (state.consoleShowned) {
     splits.right.setSizes([100, 0]);
-  } else {
+  }
+  // else, restore the previous size
+  else {
     splits.right.setSizes(state.consoleSplitSize);
   }
 
   state.consoleShowned = !state.consoleShowned;
-};
-
-$('#toggle-console-button').click(() => {
-  $(this).toggleClass('active');
-  toggleConsole();
 });
 
 fetch(
