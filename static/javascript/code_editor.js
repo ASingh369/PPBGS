@@ -134,20 +134,24 @@ const runCode = () => {
   writeToFrame(`
     ${htmlCode}
     <script>
-      console.log = window.parent.log;
-      {${state.secret}}
       {
         const fail = window.parent.fail;
-        ${state.codeChecks.setup}
         try {
+          console.log = window.parent.log;
           {
-            ${jsCode}
+            ${state.secret}
+          }
+          {
+            ${state.codeChecks.setup}
+            {
+              ${jsCode}
+            }
+            ${state.codeChecks.run}
+            ${state.codeChecks.cleanup}
           }
         } catch (e) {
-          window.parent.fail(e.message);
+          fail(e.message);
         }
-        ${state.codeChecks.run}
-        ${state.codeChecks.cleanup}
       }
     </script>`);
 
