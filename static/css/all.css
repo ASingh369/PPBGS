@@ -11,6 +11,9 @@
   color: #ff214f;
 }
 
+.text-coin{
+  color: #d9a760;
+}
 .alt-font {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
@@ -323,4 +326,9 @@
 
 .border-unread {
   border: 1px solid #b0b3b6 !important;
+}
+
+
+.bg-none{
+  background-color: #fff;
 }
