@@ -53,9 +53,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html">Home</a>
+            </li>
             <li class="nav-item active">
-              <a class="nav-link" href="../../index.html">Topics</a>
+              <a class="nav-link" href="topics.html">Topics</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -375,11 +377,11 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script>
-      var $grid = $(".gallery-wrapper").masonry({
-        itemSelector: ".grid-item",
-        columnWidth: ".grid-sizer",
+      var $grid = $('.gallery-wrapper').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
         percentPosition: true,
-        transitionDuration: 0
+        transitionDuration: 0,
       });
 
       $grid.imagesLoaded().progress(function() {

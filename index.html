@@ -41,8 +41,8 @@
     </section>
 
     <!--Navbar-->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <div class="container">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light py-3">
+      <div class="container alt-font nav-text">
         <a class="navbar-brand" href="#">Logo</a>
         <button
           class="navbar-toggler"
@@ -53,9 +53,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Topics</a>
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="template/pages/topics.html">Topics</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -82,344 +84,188 @@
     </nav>
 
     <!--Main Content-->
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-9 col-lg-10">
-          <div class="pt-5 mt-3">
-            <div class="container p-0">
-              <div class="row text-center">
-                <div class="col-12">
-                  <p class="mb-2 text-uppercase alt-font text-small">
-                    A roadmap to
-                  </p>
-                  <h5
-                    class="text-uppercase alt-font text-extra-dark-gray mb-3 font-weight-700"
-                  >
-                    Learn JavaScript
-                  </h5>
-                  <span
-                    class="separator-line-horrizontal-medium-light2 bg-deep-pink display-table margin-auto width-100px"
-                  ></span>
-                </div>
+
+    <!--Daily Goals and Continue where you left off section-->
+
+
+    <!--Topics Section-->
+    <section class="py-5 bg-lightblue">
+      <div class="container py-5">
+        <div class="row">
+          <!--Heading and a brief info-->
+          <div class="col-lg-5 pr-3 d-flex">
+            <div class="align-self-center">
+              <h1 class="alt-font text-extra-dark-gray">
+                A Roadmap To Learn JavaScript
+              </h1>
+              <div>
+                <p class="alt-font text-dark-gray mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Debitis, laborum, nostrum incidunt mollitia iusto reiciendis
+                  hic iste veritatis omnis beatae sapiente quas, soluta dolores
+                  ipsum similique autem harum distinctio nobis.
+                </p>
               </div>
-            </div>
-            <div class="row pt-5 text-light row1 mx-0">
-              <div class="col-12">
-                <div class="gallery-wrapper">
-                  <div class="col-lg-4 col-sm-6 col-12 grid-sizer"></div>
-                  <div class=" col-lg-4 col-sm-6 col-12 p-1 grid-item">
-                    <div class="content">
-                      <a href="template/pages/topic.html">
-                        <div class="content-overlay"></div>
-                        <img
-                          class="content-image image-fluid"
-                          src="static/images/html.jpeg"
-                        />
-                        <div class="topic-name fadeIn-bottom">
-                          <p class="content-title">Intro to Html</p>
-                        </div>
-                    <div class="content-details fadeIn-bottom">
-                          <p class="content-title">Intro to Html</p>
-                          <p class="content-text">
-                            This is a short description
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class=" col-lg-4 col-sm-6 col-12 p-1 grid-item">
-                    <div class="content">
-                      <a href="template/pages/topic.html">
-                        <div class="content-overlay"></div>
-                        <img
-                          class="content-image image-fluid"
-                          src="static/images/different.jpeg"
-                        />
-                        <div class="topic-name fadeIn-bottom">
-                            <p class="content-title">JavaScript Expressions</p>
-                          </div>
-                        <div class="content-details fadeIn-bottom">
-                          <p class="content-title">JavaScript Expressions</p>
-                          <p class="content-text">
-                            This is a short description
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class=" col-lg-4 col-sm-6 col-12 p-1 grid-item">
-                    <div class="content">
-                      <a href="template/pages/topic.html">
-                        <div class="content-overlay"></div>
-                        <img
-                          class="content-image image-fluid"
-                          src="static/images/layout.jpeg"
-                        />
-                        <div class="topic-name fadeIn-bottom">
-                            <p class="content-title">DOM Manipulation</p>
-                          </div>
-                        <div class="content-details fadeIn-bottom">
-                          <p class="content-title">DOM Manipulation</p>
-                          <p class="content-text">
-                            This is a short description
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class=" col-lg-4 col-sm-6 col-12 p-1 grid-item">
-                    <div class="content">
-                      <a href="template/pages/topic.html">
-                        <div class="content-overlay"></div>
-                        <img
-                          class="content-image image-fluid"
-                          src="static/images/decision.png"
-                        />
-                        <div class="topic-name fadeIn-bottom">
-                            <p class="content-title">JavaScript Conditionals</p>
-                          </div>
-                        <div class="content-details fadeIn-bottom">
-                          <p class="content-title">JavaScript Conditionals</p>
-                          <p class="content-text">
-                            This is a short description
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class=" col-lg-4 col-sm-6 col-12 p-1 grid-item">
-                    <div class="content">
-                      <a href="template/pages/topic.html">
-                        <div class="content-overlay"></div>
-                        <img
-                          class="content-image image-fluid"
-                          src="static/images/loops.jpeg"
-                        />
-                        <div class="topic-name fadeIn-bottom">
-                            <p class="content-title">Loops</p>
-                          </div>
-                        <div class="content-details fadeIn-bottom">
-                          <p class="content-title">Loops</p>
-                          <p class="content-text">
-                            This is a short description
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class=" col-lg-4 col-sm-6 col-12 p-1 grid-item">
-                    <div class="content">
-                      <a href="template/pages/topic.html">
-                        <div class="content-overlay"></div>
-                        <img
-                          class="content-image
-                              image-fluid"
-                          src="static/images/drawing.jpeg"
-                        />
-                        <div class="topic-name fadeIn-bottom">
-                            <p class="content-title">Drawing with Canvas</p>
-                          </div>
-                        <div class="content-details fadeIn-bottom">
-                          <p class="content-title">Drawing with Canvas</p>
-                          <p class="content-text">
-                            This is a short description
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class=" col-lg-4 col-sm-6 col-12 p-1 grid-item">
-                    <div class="content">
-                      <a href="template/pages/topic.html">
-                        <div class="content-overlay"></div>
-                        <img
-                          class="content-image image-fluid"
-                          src="static/images/blocks.jpeg"
-                        />
-                        <div class="topic-name fadeIn-bottom">
-                            <p class="content-title">Functions</p>
-                          </div>
-                        <div class="content-details fadeIn-bottom">
-                          <p class="content-title">Functions</p>
-                          <p class="content-text">
-                            This is a short description
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class=" col-lg-4 col-sm-6 col-12 p-1 grid-item">
-                    <div class="content">
-                      <a href="template/pages/topic.html">
-                        <div class="content-overlay"></div>
-                        <img
-                          class="content-image image-fluid"
-                          src="static/images/events.jpeg"
-                        />
-                        <div class="topic-name fadeIn-bottom">
-                            <p class="content-title">Functions and Events</p>
-                          </div>
-                        <div class="content-details fadeIn-bottom">
-                          <p class="content-title">Functions and Events</p>
-                          <p class="content-text">
-                            This is a short description
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class=" col-lg-4 col-sm-6 col-12 p-1 grid-item">
-                    <div class="content">
-                      <a href="template/pages/topic.html">
-                        <div class="content-overlay"></div>
-                        <img
-                          class="content-image image-fluid"
-                          src="static/images/array.jpeg"
-                        />
-                        <div class="topic-name fadeIn-bottom">
-                            <p class="content-title">Arrays</p>
-                          </div>
-                        <div class="content-details fadeIn-bottom">
-                          <p class="content-title">Arrays</p>
-                          <p class="content-text">
-                            This is a short description
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class=" col-lg-4 col-sm-6 col-12 p-1 grid-item">
-                    <div class="content">
-                      <a href="template/pages/topic.html">
-                        <div class="content-overlay"></div>
-                        <img
-                          class="content-image image-fluid"
-                          src="static/images/objects.jpeg"
-                        />
-                        <div class="topic-name fadeIn-bottom">
-                            <p class="content-title">Objects</p>
-                          </div>
-                        <div class="content-details fadeIn-bottom">
-                          <p class="content-title">Objects</p>
-                          <p class="content-text">
-                            This is a short description
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <a
+                href=""
+                class="btn bg-none blue-on-hover text-dark-gray px-4 mt-3 mb-5"
+                >Explore Topics</a
+              >
             </div>
           </div>
-        </div>
+          <!--List of all the topics-->
+          <div class="col-lg-7">
+            <div class="bg-none">
+              <div class="container-fluid">
+                <div class="row py-4">
+                  <div class="col-12 col-sm-6 my-2 alt-font">
+                    <a
+                      href="template/pages/topic.html"
+                      class="bg-lightblue blue-on-hover text-dark-gray py-3 px-4 d-block"
+                    >
+                      <i class="fa fa-book mr-3"></i> Intro to Html
+                    </a>
+                    <div class="progress" style="height: 2px;">
+                      <div
+                        class="progress-bar bg-green"
+                        style="width: 75%;"
+                      ></div>
+                    </div>
+                  </div>
 
-        <!--Sidebar-->
-        <div class="col-md-3 col-lg-2 mt-5 pl-md-0 pr-md-1 px-2">
-          <h2 class="subheader px-2">John Doe</h2>
-          <div class="border-top-pink border-left border-right border-bottom">
-            <h2 class="subheader py-2 text-center bg-light">Level 3</h2>
-            <h3 class="subheader subheader-small pt-2 px-2">Points/Rankings</h3>
-            <div class="px-2">
-              <table
-                class="subheader subheader-small font-weight-light border px-1 bg-light"
-                width="100%"
-              >
-                <tr class="border-bottom-white">
-                  <td width="70%" class="py-1 pl-1">Overall Points:</td>
-                  <th width="30%" class="py-1 pl-1">120</th>
-                </tr>
-                <tr class="border-bottom-white">
-                  <td width="70%" class="py-1 pl-1">Overall Rank:</td>
-                  <th width="30%" class="py-1 pl-1">7</th>
-                </tr>
-                <tr>
-                  <td width="70%" class="py-1 pl-1">Total Students:</td>
-                  <th width="30%" class="py-1 pl-1">36</th>
-                </tr>
-              </table>
-            </div>
-            <div class="bg-light mt-4 pb-3">
-              <h3 class="subheader subheader-small pt-3 px-2">Coins</h3>
-              <div class="border mx-2 py-2 bg-none text-center d-flex align-items-center justify-content-center">
-                <i class="fas fa-coins fa-3x text-coin"></i>
-                <span class="pl-3 subheader subheader-small">45</span>
+                  <div class="col-12 col-sm-6 my-2 alt-font">
+                    <a
+                      href="template/pages/topic.html"
+                      class="bg-lightblue blue-on-hover text-dark-gray py-3 px-4 d-block"
+                    >
+                      <i class="fa fa-book mr-3"></i> JavaScript Expressions
+                    </a>
+                    <div class="progress" style="height: 2px;">
+                      <div
+                        class="progress-bar bg-green"
+                        style="width: 100%;"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 my-2 alt-font">
+                    <a
+                      href="template/pages/topic.html"
+                      class="bg-lightblue blue-on-hover text-dark-gray py-3 px-4 d-block"
+                    >
+                      <i class="fa fa-book mr-3"></i> DOM Manipulation
+                    </a>
+                    <div class="progress" style="height: 2px;">
+                      <div
+                        class="progress-bar bg-green"
+                        style="width: 20%;"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 my-2 alt-font">
+                    <a
+                      href="template/pages/topic.html"
+                      class="bg-lightblue blue-on-hover text-dark-gray py-3 px-4 d-block"
+                    >
+                      <i class="fa fa-book mr-3"></i> JavaScript Conditionals
+                    </a>
+                    <div class="progress" style="height: 2px;">
+                      <div
+                        class="progress-bar bg-green"
+                        style="width: 50%;"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 my-2 alt-font">
+                    <a
+                      href="template/pages/topic.html"
+                      class="bg-lightblue blue-on-hover text-dark-gray py-3 px-4 d-block"
+                    >
+                      <i class="fa fa-book mr-3"></i> Loops
+                    </a>
+                    <div class="progress" style="height: 2px;">
+                      <div
+                        class="progress-bar bg-green"
+                        style="width: 0%;"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 my-2 alt-font">
+                    <a
+                      href="template/pages/topic.html"
+                      class="bg-lightblue blue-on-hover text-dark-gray py-3 px-4 d-block"
+                    >
+                      <i class="fa fa-book mr-3"></i> Drawing with Canvas
+                    </a>
+                    <div class="progress" style="height: 2px;">
+                      <div
+                        class="progress-bar bg-green"
+                        style="width: 60%;"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 my-2 alt-font">
+                    <a
+                      href="template/pages/topic.html"
+                      class="bg-lightblue blue-on-hover text-dark-gray py-3 px-4 d-block"
+                    >
+                      <i class="fa fa-book mr-3"></i> Functions
+                    </a>
+                    <div class="progress" style="height: 2px;">
+                      <div
+                        class="progress-bar bg-green"
+                        style="width: 10%;"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 my-2 alt-font">
+                    <a
+                      href="template/pages/topic.html"
+                      class="bg-lightblue blue-on-hover text-dark-gray py-3 px-4 d-block"
+                    >
+                      <i class="fa fa-book mr-3"></i> Functions and Events
+                    </a>
+                    <div class="progress" style="height: 2px;">
+                      <div
+                        class="progress-bar bg-green"
+                        style="width: 90%;"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 my-2 alt-font">
+                    <a
+                      href="template/pages/topic.html"
+                      class="bg-lightblue blue-on-hover text-dark-gray py-3 px-4 d-block"
+                    >
+                      <i class="fa fa-book mr-3"></i> Arrays
+                    </a>
+                    <div class="progress" style="height: 2px;">
+                      <div
+                        class="progress-bar bg-green"
+                        style="width: 40%;"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 my-2 alt-font">
+                    <a
+                      href="template/pages/topic.html"
+                      class="bg-lightblue blue-on-hover text-dark-gray py-3 px-4 d-block"
+                    >
+                      <i class="fa fa-book mr-3"></i> Objects
+                    </a>
+                    <div class="progress" style="height: 2px;">
+                      <div
+                        class="progress-bar bg-green"
+                        style="width: 60%;"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <h3 class="subheader subheader-small pt-4 px-2">Best Overall</h3>
-            <table
-              width="100%"
-              class="subheader subheader-small font-weight-light"
-            >
-              <tr class="table-heading subheader border-bottom">
-                <td width="15%" class="py-1 text-center">Pos</td>
-                <td width="60%" class="py-1">Name</td>
-                <td width="25%" class="py-1 text-center">Points</td>
-              </tr>
-              <tr class="border-bottom">
-                <td width="15%" class="py-1 text-center">1</td>
-                <td width="60%" class="py-1">
-                  <a href="" class="text-dark">Will Smith</a>
-                </td>
-                <td width="25%" class="py-1 text-center">260</td>
-              </tr>
-              <tr class="border-bottom">
-                <td width="15%" class="py-1 text-center">2</td>
-                <td width="60%" class="py-1">
-                  <a href="" class="text-dark">Jake Gyllenhall</a>
-                </td>
-                <td width="25%" class="py-1 text-center">230</td>
-              </tr>
-              <tr class="border-bottom">
-                <td width="15%" class="py-1 text-center">3</td>
-                <td width="60%" class="py-1">
-                  <a href="" class="text-dark">John Terry</a>
-                </td>
-                <td width="25%" class="py-1 text-center">200</td>
-              </tr>
-              <tr class="border-bottom">
-                <td width="15%" class="py-1 text-center">4</td>
-                <td width="60%" class="py-1">
-                  <a href="" class="text-dark">Ryan Reynolds</a>
-                </td>
-                <td width="25%" class="py-1 text-center">190</td>
-              </tr>
-              <tr class="border-bottom">
-                <td width="15%" class="py-1 text-center">5</td>
-                <td width="60%" class="py-1">
-                  <a href="" class="text-dark">David Beckham</a>
-                </td>
-                <td width="25%" class="py-1 text-center">160</td>
-              </tr>
-            </table>
-
-            <h3 class="subheader subheader-small py-4 px-2">Achievements</h3>
-            <div class="container-fluid my-2 text-center">
-              <img
-                class="badges bg-success icon"
-                rel="popover"
-                src="https://api.sololearn.com/Uploads/Achievements/56.png"
-                alt="Engaged in!"
-              />
-            </div>
-            <div class="container-fluid my-2 text-center">
-              <img
-                class="badges bg-secondary icon"
-                src="https://api.sololearn.com/Uploads/Achievements/14.png"
-                alt="Engaged in!"
-              />
-            </div>
-            <div class="container-fluid my-2 text-center">
-              <img
-                class="badges bg-info icon"
-                src="https://api.sololearn.com/Uploads/Achievements/16.png"
-                alt="Engaged in!"
-              />
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -440,22 +286,22 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script>
-      var $grid = $(".gallery-wrapper").masonry({
-        itemSelector: ".grid-item",
-        columnWidth: ".grid-sizer",
+      var $grid = $('.gallery-wrapper').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
         percentPosition: true,
-        transitionDuration: 0
+        transitionDuration: 0,
       });
 
       $grid.imagesLoaded().progress(function() {
         $grid.masonry();
       });
-      $("document").ready(function() {
+      $('document').ready(function() {
         var popOverSettings = {
-          placement: "left",
-          selector: ".icon",
-          trigger: "hover",
-          content: "This is badge information"
+          placement: 'left',
+          selector: '.icon',
+          trigger: 'hover',
+          content: 'This is badge information',
         };
         $(this).popover(popOverSettings);
       });

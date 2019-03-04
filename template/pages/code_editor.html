@@ -65,51 +65,54 @@
 </head>
 
 <body>
-  <div class="code--page-container d-flex flex-column">
+  <div class="code--page-container">
     <header>
       <!-- navbar displaying task and buttons -->
       <nav class="navbar navbar-light bg-light">
-        <div>
-          <a class="navbar-brand" href="/">Logo</a>
-          <div><strong>Task:</strong> <span id="task-placeholder"></span></div>
-        </div>
-        <!-- run code buttons -->
-        <div>
-          <button class="btn btn-outline-secondary" id="run-button">Run</button>
-          <button class="btn btn-outline-primary" id="submit-button">Submit</button>
-        </div>
+        <a class="navbar-brand" href="/">Logo</a>
+        <div><strong>Task:</strong> <span id="task-placeholder"></span></div>
       </nav>
     </header>
-    <main class="flex-grow-1">
-      <!-- top half of the page shows HTML and JS editor -->
-      <div id="editors">
+    <main>
+      <!-- left half of the page shows HTML and JS editor -->
+      <div class="split-horizontal" id="editors">
         <!-- html editor -->
-        <div class="split-horizontal" id="html-editor-parent">
+        <div id="html-editor-parent">
           <h4 class="pane-label">HTML</h4>
           <div class="pane-content" id="html-editor"></div>
         </div>
-        <div class="gutter gutter-horizontal"></div>
+        <div class="gutter gutter-vertical"></div>
         <!-- js editor -->
-        <div class="split-horizontal" id="js-editor-parent">
+        <div id="js-editor-parent">
           <h4 class="pane-label">JS</h4>
           <div class="pane-content" id="js-editor"></div>
         </div>
       </div>
-      <div class="gutter gutter-vertical"></div>
-      <!-- bottom half shows html page and the console -->
-      <div id="code-output">
+      <div class="gutter gutter-horizontal"></div>
+      <!-- right half shows html page and the console -->
+      <div class="split-horizontal" id="code-output">
         <!-- html page view -->
-        <div class="split-horizontal" id="html-frame-view">
+        <div id="html-frame-view">
           <iframe class="w-100 h-100" frameborder="0"></iframe>
         </div>
-        <div class="gutter gutter-horizontal"></div>
+        <div class="gutter gutter-vertical"></div>
         <!-- console output -->
-        <div class="split-horizontal" id="console-area">
+        <div id="console-area">
           <h4 class="pane-label">Console</h4>
-          <div class="pane-content px-3" id="console-output"></div>
+          <div class="pane-content" id="console-output-wrapper">
+            <div class="pane-overflow-fix px-3" id="console-output"></div>
+          </div>
         </div>
       </div>
     </main>
+    <div class="d-flex justify-content-end p-2" id="tail-content">
+      <button class="btn btn-outline-secondary mx-1" id="toggle-console-button">
+        Toggle Console
+      </button>
+      <button class="btn btn-outline-primary mx-1" id="submit-button">
+        Submit
+      </button>
+    </div>
   </div>
 </body>
 
