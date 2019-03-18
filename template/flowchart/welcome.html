@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../static/css/all.css" />
+  </head>
+  <body>
+    <!--Top bar-->
+    <section class="dark-background text-light">
+      <div class="container py-1">
+        <div class="d-flex">
+          <div>
+            <small>
+              <span class="pr-5">
+                <i class="fas text-light fa-envelope-open"></i>
+                support@gmail.com</span
+              >
+            </small>
+          </div>
+          <div class="ml-auto">
+            <small><a href="">Logout</a> </small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-none">
+      <div class="container alt-font nav-text d-flex py-1">
+        <a class="navbar-brand text-dark" href="{% url 'index' %}"
+          ><img
+            src="../../static/images/logo.png"
+            alt=""
+            height="50"
+            width="50"
+          />
+          PPBGS
+        </a>
+        <div class="ml-auto d-flex align-items-center text-dark-gray">
+          <span class="mr-2">(John Doe)</span>
+          <span class="mr-3">Points: 2</span> Coins: 20
+        </div>
+      </div>
+    </section>
+
+    <!--Main Content-->
+
+    <section
+      class="flowchart-background"
+      style="background-image: url('https://images.pexels.com/photos/373076/pexels-photo-373076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');"
+    >
+      <div class="flowchart-overlay">
+        <div class="container-fluid py-5">
+          <div class="row">
+            <div class="col-md-6 col-12 pl-md-5 px-3 d-flex align-items-center">
+              <div class="rounded">
+                <img
+                  class="img-fluid rounded"
+                  src="https://images.pexels.com/photos/984539/pexels-photo-984539.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="col-md-6 col-12 pr-md-5 px-3 mt-4 mt-md-0">
+              <div class="bg-none rounded py-4">
+                <div class="container py-3 px-4 alt-font">
+                  <h5
+                    class="text-uppercase alt-font text-extra-dark-gray mb-3 font-weight-700"
+                  >
+                    Welcome to ppbgs
+                  </h5>
+                  <span
+                    class="mb-4 separator-line-horrizontal-medium-light2 bg-deep-pink display-table width-100px"
+                  ></span>
+                  <div class="my-2">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Labore, facilis, similique velit esse exercitationem vero
+                    error molestiae at reprehenderit nemo totam modi ratione
+                    eaque dolorum nam porro incidunt perferendis perspiciatis?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Harum repudiandae, blanditiis est suscipit quod explicabo
+                    recusandae qui vel illum ut, et necessitatibus culpa dolore
+                    iusto. Incidunt et fugit voluptatem adipisci!
+                  </div>
+                  <a
+                    href="questions.html"
+                    class="btn btn-outline-dark-pink mt-4"
+                    >Start Flowchart</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script>
+      $('.quiz-option-outer').on('click', function(e) {
+        if ($(e.target).is('.quiz-option')) {
+          e.stopPropagation();
+        } else {
+          if ($('input:radio', this).prop('checked') === true) {
+            console.log('returning false');
+            return false;
+          }
+          $('input:radio', this).prop('checked', true);
+        }
+        console.log('Clicked : ' + $(this).attr('class'));
+      });
+
+      function quizItem(radio) {
+        console.log('radio' + 1);
+        console.log(radio);
+        for (let i = 1; i <= 4; i++) {
+          document.getElementById('radio' + i).style.backgroundColor =
+            '#f8f9fa';
+          document.getElementById('radio' + i).style.color = 'black';
+        }
+        document.getElementById(radio).style.backgroundColor = '#ff214f';
+        document.getElementById(radio).style.color = 'white';
+      }
+    </script>
+  </body>
+</html>

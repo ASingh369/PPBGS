@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../static/css/all.css" />
+  </head>
+  <body>
+    <!--Topbar-->
+    <section class="dark-background text-light d-none d-sm-block">
+      <div class="container py-1">
+        <div class="d-flex">
+          <div>
+            <small>
+              <span class="pr-5">
+                <i class="fas text-light fa-envelope-open"></i>
+                support@gmail.com</span
+              >
+              <span class="pr-2 ">
+                <i class="fas text-light fa-phone"></i> (333)-444-5555</span
+              ></small
+            >
+          </div>
+          <div class="ml-auto"><small>Logout</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3 py-0">
+      <div class="container">
+        <a class="navbar-brand py-1" href="#"
+          ><img src="../../static/images/logo3.png" class="logo" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item active">
+              <a class="nav-link" href="topics.html">Topics</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Rankings</a
+              >
+              <div class="dropdown-menu">
+                <a href="leaderboard.html" class="dropdown-item"
+                  >Leaderboards</a
+                >
+                <a href="#" class="dropdown-item">Table</a>
+              </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+            <li class="nav-item">
+              <a class="nav-link d-block d-sm-none" href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-2 px-1">
+          <div class="card border-green px-3 py-2 shadow">
+            <span class="text-small alt-font"
+              ><i class="fas fa-trophy"></i> Overall Rank</span
+            >
+            <div class="alt-font text-center text-dark-gray h2">
+              <span class="countup">23</span>
+            </div>
+            <div class="alt-font subheader subheader-small font-weight-light">
+              <span class="text-green"><i class="fas fa-caret-up"></i> 3</span>
+              (Old rank: 26)
+            </div>
+          </div>
+        </div>
+        <div class="col-2 px-1">
+          <div class="card border-green px-3 py-2 shadow">
+            <span class="text-small alt-font"
+              ><i class="fas fa-star"></i> Total Points</span
+            >
+            <div class="alt-font text-center text-dark-gray h2">
+              <span class="countup">54</span>
+            </div>
+            <div class="alt-font subheader subheader-small font-weight-light">
+              <span class="text-green"><i class="fas fa-caret-up"></i> 7</span>
+              (Previously 47)
+            </div>
+          </div>
+        </div>
+        <div class="col-2 px-1">
+          <div class="card border-danger px-3 py-2 shadow">
+            <span class="text-small alt-font"
+              ><i class="fas fa-coins"></i> Coins Remaining</span
+            >
+            <div class="alt-font text-center text-dark-gray h2">
+              <span class="countup">30</span>
+            </div>
+            <div class="alt-font subheader subheader-small font-weight-light">
+              <span class="text-danger"
+                ><i class="fas fa-caret-down"></i> 25</span
+              >
+              (Previously 55)
+            </div>
+          </div>
+        </div>
+        <div class="col-2 px-1">
+          <div class="card border-blue px-3 py-2 shadow">
+            <span class="text-small alt-font"
+              ><i class="fas fa-user"></i> Total Users</span
+            >
+            <div class="alt-font text-center text-dark-gray h2">
+              <span class="countup">26</span>
+            </div>
+            <div class="alt-font subheader subheader-small font-weight-light">
+              Your Rank: 10
+            </div>
+          </div>
+        </div>
+        <div class="col-2 px-1">
+          <div class="card border-danger px-3 py-2 shadow">
+            <span class="text-small alt-font"
+              ><i class="fas fa-star"></i> Average Points</span
+            >
+            <div class="alt-font text-center text-dark-gray h2">
+              <span class="countup">8</span>
+            </div>
+            <div class="alt-font subheader subheader-small font-weight-light">
+              <span class="text-danger"
+                ><i class="fas fa-caret-down"></i> 7%</span
+              >
+              Below Average
+            </div>
+          </div>
+        </div>
+        <div class="col-2 px-1">
+          <div class="card border-green px-3 py-2 shadow">
+            <span class="text-small alt-font"
+              ><i class="fas fa-clock"></i> Average Time Taken</span
+            >
+            <div class="alt-font text-center text-dark-gray h2">
+              <span class="countup">2</span> min
+            </div>
+            <div class="alt-font subheader subheader-small font-weight-light">
+              <span class="text-green"
+                ><i class="fas fa-caret-up"></i> 17%</span
+              >
+              Above Average
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row py-4">
+        <div class="col-8">
+          <div
+            class="bg-lightblue rounded text-dark-gray px-2 py-4 alt-font text-uppercase d-flex justify-content-around align-items-center"
+          >
+            <div class="text-center subheader font-weight-light">
+              Kathy Smith
+              <div class=" py-2 text-capitalize text-small">
+                <div class="text-green">Score: 7</div>
+                <div class="text-danger">Time taken: 102 sec</div>
+              </div>
+            </div>
+            <div class="display-4 text-center">
+              <span class="text-green"> 7 </span>:
+              <span class="text-danger"> 4</span>
+            </div>
+            <div class="text-center subheader font-weight-light">
+              John Doe
+              <div class=" py-2 text-capitalize text-small">
+                <div class="text-danger">Score: 4</div>
+                <div class="text-green">Time taken: 90 sec</div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-lightblue mt-3">
+            <div class="bg-dark text-light px-3 py-1 alt-font d-flex">
+              <div class="mr-auto">Level 4</div>
+              <div class="">Challenges Remaining: 3/5</div>
+            </div>
+            <div class="px-2 py-3">
+              <div class="progress bg-dark subheader" style="height: 5rem;">
+                <div
+                  class="progress-bar bg-deep-pink content-relative"
+                  style="width: 26.66%;"
+                >
+                  Level 3
+                  <div class="background" style="width: 100%;"></div>
+                </div>
+                <div
+                  class="progress-bar bg-blue content-relative"
+                  style="width: 33.33%"
+                >
+                  Level 4
+                  <div class="background" style="width: 40%;"></div>
+                </div>
+                <div class="progress-bar bg-green" style="width: 40%">
+                  Level 5
+                </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-3"></div>
+                  <div class="col-4 px-0">4 pts</div>
+                  <div class="col px-0">9 pts</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 border px-0">
+          <div
+            class="alt-font text-center subheader pb-3 border-bottom-pink pt-3 bg-lightblue"
+          >
+            Top Performers
+          </div>
+
+          <table
+            class="table table-striped-lightblue table-borderless subheader subheader-small text-dark-gray mt-3"
+          >
+            <tr>
+              <td class="px-3">
+                <a href="" class="text-dark">John Doe</a>
+                <span class="mx-2 font-weight-light"
+                  >( <i class="fas fa-trophy text-blue"></i> Overall Rank:
+                  3)</span
+                >
+                <div class="font-weight-light pt-1">
+                  <span class="mx-2">Score: 7</span>
+                  <span class="mx-2">Time taken: 2min</span>
+                  <span class="mx-2">Level: 5</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-3">
+                <a href="" class="text-dark">John Doe</a>
+                <span class="mx-2 font-weight-light"
+                  >( <i class="fas fa-trophy text-blue"></i> Overall Rank:
+                  3)</span
+                >
+                <div class="font-weight-light pt-1">
+                  <span class="mx-2">Score: 7</span>
+                  <span class="mx-2">Time taken: 2min</span>
+                  <span class="mx-2">Level: 5</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-3">
+                <a href="" class="text-dark">John Doe</a>
+                <span class="mx-2 font-weight-light"
+                  >( <i class="fas fa-trophy text-blue"></i> Overall Rank:
+                  3)</span
+                >
+                <div class="font-weight-light pt-1">
+                  <span class="mx-2">Score: 7</span>
+                  <span class="mx-2">Time taken: 2min</span>
+                  <span class="mx-2">Level: 5</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-3">
+                <a href="" class="text-dark">John Doe</a>
+                <span class="mx-2 font-weight-light"
+                  >( <i class="fas fa-trophy text-blue"></i> Overall Rank:
+                  3)</span
+                >
+                <div class="font-weight-light pt-1">
+                  <span class="mx-2">Score: 7</span>
+                  <span class="mx-2">Time taken: 2min</span>
+                  <span class="mx-2">Level: 5</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-3">
+                <a href="" class="text-dark">John Doe</a>
+                <span class="mx-2 font-weight-light"
+                  >( <i class="fas fa-trophy text-blue"></i> Overall Rank:
+                  3)</span
+                >
+                <div class="font-weight-light pt-1">
+                  <span class="mx-2">Score: 7</span>
+                  <span class="mx-2">Time taken: 2min</span>
+                  <span class="mx-2">Level: 5</span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script>
+      var $grid = $('.gallery-wrapper').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true,
+        transitionDuration: 0,
+      });
+
+      $grid.imagesLoaded().progress(function() {
+        $grid.masonry();
+      });
+
+      setTimeout(function() {
+        $('#pop-message').fadeOut('slow');
+      }, 4000);
+
+      $('.countup').each(function() {
+        $(this)
+          .prop('Counter', 0)
+          .animate(
+            {
+              Counter: $(this).text(),
+            },
+            {
+              duration: 1000,
+              easing: 'swing',
+              step: function(now) {
+                $(this).text(Math.ceil(now));
+              },
+            },
+          );
+      });
+    </script>
+  </body>
+</html>

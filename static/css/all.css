@@ -168,7 +168,6 @@
 }
 .btn-outline-dark-pink:hover,
 .btn-outline-dark-pink:active,
-.btn-outline-dark-pink:visited,
 .btn-outline-dark-pink:focus {
   color: white;
   background-color: #ff214f !important;
@@ -457,4 +456,112 @@
 
 .text-blue {
   color: #10d8f3;
+}
+
+.pop-message {
+  position: fixed;
+  z-index: 1;
+  top: 110px;
+  background: transparent;
+  -webkit-animation: dropdown 0.6s infinite; /* Safari 4.0 - 8.0 */
+  animation: dropdown 0.6s infinite;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+}
+
+@-webkit-keyframes dropdown {
+  from {
+    top: 70px;
+    opacity: 0;
+  }
+  to {
+    top: 110px;
+    opacity: 1;
+  }
+}
+
+@keyframes dropdown {
+  from {
+    top: 70px;
+    opacity: 0;
+  }
+  to {
+    top: 110px;
+    opacity: 1;
+  }
+}
+
+.bg-message {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.border-green {
+  border-color: #1cf2b4 !important;
+}
+
+.border-blue {
+  border-color: #10d8f3 !important;
+}
+
+.border-bottom-pink {
+  border-bottom: 1px solid #ff214f;
+}
+
+.table-striped-lightblue tbody tr:nth-of-type(odd) {
+  background-color: #f1f9ff;
+}
+
+.bg-progress {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.background {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content-relative {
+  position: relative;
+}
+
+.dotted {
+  border-bottom: 1px dotted #000;
+}
+
+.border-pink {
+  border: 1px solid #ff214f !important;
+}
+
+.dotted2 {
+  border-bottom: 1px dotted white;
+}
+
+.overlay {
+  background-color: rgba(16, 216, 243, 0.6);
+  height: 100%;
+  overflow: auto;
+}
+
+.flowchart-overlay {
+  background-color: rgba(16, 216, 243, 0.6);
+  height: 100%;
+  min-height: 87vh;
+  overflow: auto;
+}
+
+.flowchart-background {
+  width: 100%;
+  min-height: 87vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.welcome {
+  min-height: 530px;
 }
